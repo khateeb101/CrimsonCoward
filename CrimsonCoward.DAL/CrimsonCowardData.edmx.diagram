@@ -35,6 +35,8 @@
         <AssociationConnector Association="CrimsonCowardModel.FK__aspnet_Pe__UserI__5E54FF49" ManuallyRouted="false" />
         <AssociationConnector Association="CrimsonCowardModel.FK__aspnet_Pr__UserI__373B3228" ManuallyRouted="false" />
         <AssociationConnector Association="CrimsonCowardModel.aspnet_UsersInRoles" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="CrimsonCowardModel.Image" Width="1.5" PointX="10.375" PointY="13.75" />
+        <EntityTypeShape EntityType="CrimsonCowardModel.Slider" Width="1.5" PointX="13.375" PointY="12.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -147,7 +147,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CrimsonCowardData.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Image.cs">
+      <DependentUpon>CrimsonCowardData.tt</DependentUpon>
+    </Compile>
     <Compile Include="PropertyImage.cs">
+      <DependentUpon>CrimsonCowardData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Slider.cs">
       <DependentUpon>CrimsonCowardData.tt</DependentUpon>
     </Compile>
     <Compile Include="Subscriber.cs">

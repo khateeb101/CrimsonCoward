@@ -19,7 +19,7 @@ namespace CrimsonCoward
                 {
                     CrimsonCowardEntities db = new CrimsonCowardEntities();
                     RealEstateProperty _prop = db.RealEstateProperties.Where(x=>x.PRL == prl).FirstOrDefault();
-                    return _prop.PropertyRooms.Count;
+                    return 0;
                 }
                 else
                 {
@@ -68,7 +68,7 @@ namespace CrimsonCoward
                 else
                 {
                     prop_thumbs_container.Visible = false;
-                    imgProp.ImageUrl = "~/img/logo.png";
+                    imgProp.ImageUrl = "~/assets/logo.png";
                 }
 
                
@@ -82,75 +82,75 @@ namespace CrimsonCoward
                     //    featuresList.DataSource = _features;
                     //    featuresList.DataBind();
                     //}
-                    if (_prop.PropertyFeatures.Count>0)
-                    {
-                        trAmenities.Visible = true;
-                        //string[] _features = _prop.Features.Split(',');
-                        featuresList.DataSource = _prop.PropertyFeatures;
-                        featuresList.DataBind();
-                    }
-                    if (_prop.PropertyRooms.Count > 0)
-                    {
-                        trRooms.Visible = true;
-                        //string[] _features = _prop.Features.Split(',');
-                        List<PropertyRoom> list = new List<PropertyRoom>();
-                        List<PropertyRoom> list1 = new List<PropertyRoom>();
-                        List<PropertyRoom> list2 = new List<PropertyRoom>(); 
-                        List<PropertyRoom> list3 = new List<PropertyRoom>();
-                        int i =1;
-                        if (!_prop.PropertyFor.ToLower().Contains("sale") && _prop.SalePrice <= 0)
-                        {
+                    //if (_prop.PropertyFeatures.Count>0)
+                    //{
+                    //    trAmenities.Visible = true;
+                    //    //string[] _features = _prop.Features.Split(',');
+                    //    featuresList.DataSource = _prop.PropertyFeatures;
+                    //    featuresList.DataBind();
+                    //}
+                    //if (_prop.PropertyRooms.Count > 0)
+                    //{
+                    //    trRooms.Visible = true;
+                    //    //string[] _features = _prop.Features.Split(',');
+                    //    List<PropertyRoom> list = new List<PropertyRoom>();
+                    //    List<PropertyRoom> list1 = new List<PropertyRoom>();
+                    //    List<PropertyRoom> list2 = new List<PropertyRoom>(); 
+                    //    List<PropertyRoom> list3 = new List<PropertyRoom>();
+                    //    int i =1;
+                    //    if (!_prop.PropertyFor.ToLower().Contains("sale") && _prop.SalePrice <= 0)
+                    //    {
 
-                            trRooms3.Visible = true;
-                            foreach (var item in _prop.PropertyRooms)
-                            {
-                                if (i <= 3)
-                                {
-                                    list.Add(item);
-                                }
-                                if (i <= 6 && i > 3)
-                                {
-                                    list1.Add(item);
-                                }
-                                if (i <= 9 && i > 6)
-                                {
-                                    list2.Add(item);
-                                }
-                                if (i > 9)
-                                {
-                                    list3.Add(item);
-                                }
-                                i++;
-                            }
-                        }
-                        else
-                        {
-                            foreach (var item in _prop.PropertyRooms)
-                            {
-                                if (i <= 4)
-                                {
-                                    list.Add(item);
-                                }
-                                if (i <= 8 && i > 4)
-                                {
-                                    list1.Add(item);
-                                }
-                                if (i > 8)
-                                {
-                                    list2.Add(item);
-                                }
-                                i++;
-                            }
-                        }
+                    //        trRooms3.Visible = true;
+                    //        foreach (var item in _prop.PropertyRooms)
+                    //        {
+                    //            if (i <= 3)
+                    //            {
+                    //                list.Add(item);
+                    //            }
+                    //            if (i <= 6 && i > 3)
+                    //            {
+                    //                list1.Add(item);
+                    //            }
+                    //            if (i <= 9 && i > 6)
+                    //            {
+                    //                list2.Add(item);
+                    //            }
+                    //            if (i > 9)
+                    //            {
+                    //                list3.Add(item);
+                    //            }
+                    //            i++;
+                    //        }
+                    //    }
+                    //    else
+                    //    {
+                    //        foreach (var item in _prop.PropertyRooms)
+                    //        {
+                    //            if (i <= 4)
+                    //            {
+                    //                list.Add(item);
+                    //            }
+                    //            if (i <= 8 && i > 4)
+                    //            {
+                    //                list1.Add(item);
+                    //            }
+                    //            if (i > 8)
+                    //            {
+                    //                list2.Add(item);
+                    //            }
+                    //            i++;
+                    //        }
+                    //    }
 
-                        rptRooms.DataSource = list;
-                        rptRooms.DataBind();
-                        rptRooms1.DataSource = list1;
-                        rptRooms1.DataBind();
-                        rptRooms2.DataSource = list2;
-                        rptRooms2.DataBind();
-                        rptRooms3.DataSource = list3;
-                        rptRooms3.DataBind();
+                        //rptRooms.DataSource = list;
+                        //rptRooms.DataBind();
+                        //rptRooms1.DataSource = list1;
+                        //rptRooms1.DataBind();
+                        //rptRooms2.DataSource = list2;
+                        //rptRooms2.DataBind();
+                        //rptRooms3.DataSource = list3;
+                        //rptRooms3.DataBind();
                     }
                 ltrPropLocation.Text = _prop.PropertyType + " for " + _prop.PropertyFor + "<br><span style=\"font-weight:normal; color:black\">In" + (_prop.District.ToLower()=="achrafieh"?" Achrafieh ":" ") + _prop.Neighborhood + "</span>";
                     
@@ -229,5 +229,5 @@ namespace CrimsonCoward
         //    dtProps.SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
         //    rptSimilarProjects.DataBind();
         //}
-    }
+    //}
 }

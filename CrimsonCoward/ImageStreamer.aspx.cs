@@ -58,7 +58,7 @@ namespace CrimsonCoward
                     if (_img != null && _img.Image.Length > 0)
                         Response.BinaryWrite(ImageToByteArray(ScaleImage(ByteArrayToImage(_img.Image), int.Parse(Request.Params["width"]), int.Parse(Request.Params["height"]))));
                     else
-                        Response.BinaryWrite(File.ReadAllBytes(MapPath("~/img/logo.png")));
+                        Response.BinaryWrite(File.ReadAllBytes(MapPath("~/assets/logo.png")));
                 }
                 else
                 {
@@ -68,7 +68,7 @@ namespace CrimsonCoward
                     if (_img != null && _img.Image.Length > 0)
                         Response.BinaryWrite(_img.Image);
                     else
-                        Response.BinaryWrite(File.ReadAllBytes(MapPath("~/img/logo.png")));
+                        Response.BinaryWrite(File.ReadAllBytes(MapPath("~/assets/logo.png")));
                 }
 
             }
@@ -83,7 +83,7 @@ namespace CrimsonCoward
                     if (_img != null && _img.Image.Length > 0)
                         Response.BinaryWrite(ImageToByteArray(ScaleImage(ByteArrayToImage(_img.Image), int.Parse(Request.Params["width"]), int.Parse(Request.Params["height"]))));
                     else
-                        Response.BinaryWrite(File.ReadAllBytes(MapPath("~/img/logo.png")));
+                        Response.BinaryWrite(File.ReadAllBytes(MapPath("~/assets/logo.png")));
                 }
                 else
                 {
@@ -93,7 +93,7 @@ namespace CrimsonCoward
                     if (_img != null && _img.Image.Length > 0)
                         Response.BinaryWrite(_img.Image);
                     else
-                        Response.BinaryWrite(File.ReadAllBytes(MapPath("~/img/logo.png")));
+                        Response.BinaryWrite(File.ReadAllBytes(MapPath("~/assets/logo.png")));
                 }
 
             }
@@ -106,7 +106,7 @@ namespace CrimsonCoward
                 if (_img != null && _img.Image.Length > 0)
                     Response.BinaryWrite(_img.Image);
                 else
-                    Response.BinaryWrite(File.ReadAllBytes(MapPath("~/img/logo.png")));
+                    Response.BinaryWrite(File.ReadAllBytes(MapPath("~/assets/logo.png")));
 
 
             }
@@ -122,7 +122,7 @@ namespace CrimsonCoward
                     if (_img != null && _img.Image.Length > 0)
                         Response.BinaryWrite(ImageToByteArray(ScaleImage(ByteArrayToImage(_img.Image), int.Parse(Request.Params["width"]), int.Parse(Request.Params["height"]))));
                     else
-                        Response.BinaryWrite(File.ReadAllBytes(MapPath("~/img/logo.png")));
+                        Response.BinaryWrite(File.ReadAllBytes(MapPath("~/assets/logo.png")));
                 }
                 else
                 {
@@ -133,7 +133,7 @@ namespace CrimsonCoward
                     if (_img != null && _img.Image.Length > 0)
                         Response.BinaryWrite(_img.Image);
                     else
-                        Response.BinaryWrite(File.ReadAllBytes(MapPath("~/img/logo.png")));
+                        Response.BinaryWrite(File.ReadAllBytes(MapPath("~/assets/logo.png")));
                 }
 
             }
@@ -143,7 +143,7 @@ namespace CrimsonCoward
             else
             {
 
-                Response.BinaryWrite(File.ReadAllBytes(MapPath("~/img/logo.png")));
+                Response.BinaryWrite(File.ReadAllBytes(MapPath("~/assets/logo.png")));
             }
         }
 

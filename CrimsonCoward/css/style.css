@@ -618,7 +618,13 @@ display: inline-block;
 	margin:0;
 	padding:0;
 }
-
+#story{
+	width: 100%;
+	background-color:rgb(241,178,38);
+	position:relative;
+	margin:0;
+	padding:0;
+}
 /*  Sliders
 ==================================== */
 /* --- flexslider --- */

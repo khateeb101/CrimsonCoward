@@ -115,6 +115,8 @@
     <Content Include="Admin\BlogCatAdminEdit.aspx" />
     <Content Include="Admin\BlogsAdmin.aspx" />
     <Content Include="Admin\BlogAdminEdit.aspx" />
+    <Content Include="Admin\SliderAdmin.aspx" />
+    <Content Include="Admin\SliderAdminEdit.aspx" />
     <Content Include="Admin\PartnershipsAdminEdit.aspx" />
     <Content Include="Admin\HomeTipsEdit.aspx" />
     <Content Include="Admin\NewsAdminEdit.aspx" />
@@ -122,6 +124,8 @@
     <Content Include="Admin\HomeTipsAdmin.aspx" />
     <Content Include="Admin\NewsAdmin.aspx" />
     <Content Include="Admin\PagesAdmin.aspx" />
+    <Content Include="assets\CC_Assets_Header_Arrow-Left.png" />
+    <Content Include="assets\CC_Assets_Header_Arrow-Right.png" />
     <Content Include="AutoComplete.asmx" />
     <Content Include="ContactUs.aspx" />
     <Content Include="css\perfect-scrollbar.css" />
@@ -137,6 +141,7 @@
     <Content Include="email\message.htm" />
     <Content Include="email\property.htm" />
     <Content Include="email\request.htm" />
+    <Content Include="CCHome.aspx" />
     <Content Include="img\App-store.png" />
     <Content Include="img\Email.png" />
     <Content Include="img\google-play.png" />
@@ -340,6 +345,20 @@
     <Compile Include="Admin\BlogAdminEdit.aspx.designer.cs">
       <DependentUpon>BlogAdminEdit.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\SliderAdmin.aspx.cs">
+      <DependentUpon>SliderAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SliderAdmin.aspx.designer.cs">
+      <DependentUpon>SliderAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SliderAdminEdit.aspx.cs">
+      <DependentUpon>SliderAdminEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SliderAdminEdit.aspx.designer.cs">
+      <DependentUpon>SliderAdminEdit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\PartnershipsAdminEdit.aspx.cs">
       <DependentUpon>PartnershipsAdminEdit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -405,6 +424,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper.cs" />
+    <Compile Include="CCHome.aspx.cs">
+      <DependentUpon>CCHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCHome.aspx.designer.cs">
+      <DependentUpon>CCHome.aspx</DependentUpon>
+    </Compile>
     <Compile Include="home.aspx.cs">
       <DependentUpon>home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

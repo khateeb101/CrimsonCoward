@@ -80,11 +80,11 @@ namespace CrimsonCoward
                           {
                               if (img.PropertyType.ToLower() == "land")
                               {
-                                  b = File.ReadAllBytes(MapPath("~/img/logo.png"));
+                                  b = File.ReadAllBytes(MapPath("~/assets/logo.png"));
                               }
                               else
                               {
-                                  b = File.ReadAllBytes(MapPath("~/img/logo.png"));
+                                  b = File.ReadAllBytes(MapPath("~/assets/logo.png"));
                               }
                           }
                           else
@@ -92,7 +92,7 @@ namespace CrimsonCoward
                       }
                       else
                       {
-                    b = File.ReadAllBytes(MapPath("~/img/logo.png"));
+                    b = File.ReadAllBytes(MapPath("~/assets/logo.png"));
                       }
                 }
                 else if (Request.Params["imgID"] != null)
@@ -102,12 +102,12 @@ namespace CrimsonCoward
                    if (_img != null)
                    {
                        if (_img != null && _img.Image.Length == 0)
-                           b = File.ReadAllBytes(MapPath("~/img/logo.png"));
+                           b = File.ReadAllBytes(MapPath("~/assets/logo.png"));
                        else
                            b = _img.Image;
                    }
                    else
-                b = File.ReadAllBytes(MapPath("~/img/logo.png"));
+                b = File.ReadAllBytes(MapPath("~/assets/logo.png"));
 
 
                 }
@@ -115,7 +115,7 @@ namespace CrimsonCoward
                 {
                 var _id = Request.Params["newsid"].ToGuid();
                
-                b = File.ReadAllBytes(MapPath("~/img/logo.png"));
+                b = File.ReadAllBytes(MapPath("~/assets/logo.png"));
                 }
                 else if (Request.Params["BlogCatid"] != null)
                 {
@@ -124,12 +124,12 @@ namespace CrimsonCoward
                        if (img != null)
                        {
                            if (img.image == null || img.image.Length == 0)
-                               b = File.ReadAllBytes(MapPath("~/img/logo.png"));
+                               b = File.ReadAllBytes(MapPath("~/assets/logo.png"));
                            else
                                b = img.image;
                        }
                        else
-                b = File.ReadAllBytes(MapPath("~/img/logo.png"));
+                b = File.ReadAllBytes(MapPath("~/assets/logo.png"));
                 }
                 else if (Request.Params["Blogid"] != null)
                 {
@@ -139,37 +139,33 @@ namespace CrimsonCoward
                       if (img != null)
                       {
                           if (img.image == null || img.image.Length == 0)
-                              b = File.ReadAllBytes(MapPath("~/img/logo.png"));
+                              b = File.ReadAllBytes(MapPath("~/assets/logo.png"));
                           else
                               b = img.image;
                       }
                       else
-                b = File.ReadAllBytes(MapPath("~/img/logo.png"));
+                b = File.ReadAllBytes(MapPath("~/assets/logo.png"));
                 }
-                else if (Request.Params["partnershipId"] != null)
+                else if (Request.Params["SliderId"] != null)
                 {
-                var _id = Guid.Parse(Request.Params["partnershipId"]);
-                         DAL.Partnership img = db.Partnerships.Where(x=>x.Id== _id).FirstOrDefault();
+                var _id = int.Parse(Request.Params["SliderId"]);
+                         DAL.Slider slider = db.Sliders.Where(x=>x.Id== _id).FirstOrDefault();
+                         DAL.Image img = db.Images.Where(x => x.Id == slider.ImageId).FirstOrDefault();
                          if (img != null)
                          {
                      
-                             if (img.image == null || img.image.Length == 0)
-                                 b = File.ReadAllBytes(MapPath("~/img/logo.png"));
+                             if (img.File == null || img.File.Length == 0)
+                                 b = File.ReadAllBytes(MapPath("~/assets/logo.png"));
                              else
                              {
-                                 if (Request.Params["logo"] != null)
-                                 {
-                                     b = img.logo;
-                                 }
-                                 else
-                                 {
-                                     b = img.image;
-                                 }
+                                
+                                     b = img.File;
+                               
                      
                              }
                          }
                          else
-                    b = File.ReadAllBytes(MapPath("~/img/logo.png"));
+                    b = File.ReadAllBytes(MapPath("~/assets/logo.png"));
                 }
                 else if (Request.Params["HomeTipid"] != null)
                 {
@@ -178,12 +174,12 @@ namespace CrimsonCoward
                       if (img != null)
                       {
                           if (img.image == null || img.image.Length == 0)
-                              b = File.ReadAllBytes(MapPath("~/img/logo.png"));
+                              b = File.ReadAllBytes(MapPath("~/assets/logo.png"));
                           else
                               b = img.image;
                       }
                       else
-                    b = File.ReadAllBytes(MapPath("~/img/logo.png"));
+                    b = File.ReadAllBytes(MapPath("~/assets/logo.png"));
                 }
                 else if (Request.Params["PropertyImageId"] != null)
                 {
@@ -192,11 +188,11 @@ namespace CrimsonCoward
                         if (propImg != null)
                             b = propImg.Image;
                         else
-                            b = File.ReadAllBytes(MapPath("~/img/logo.png"));
+                            b = File.ReadAllBytes(MapPath("~/assets/logo.png"));
                     }
                     else
                     {
-                    b = File.ReadAllBytes(MapPath("~/img/logo.png"));
+                    b = File.ReadAllBytes(MapPath("~/assets/logo.png"));
                 }
 
 

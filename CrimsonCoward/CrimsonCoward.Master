@@ -95,7 +95,7 @@
                        
                     </div>
                 </div>--%>
-                <aside id="sticky-social" style="z-index: 99999">
+<%--                <aside id="sticky-social" style="z-index: 99999">
     <ul>
         <li><a href="https://www.facebook.com/CrimsonCoward-Real-Estate-in-Lebanon-134698633210668/?ref=page_internal" class="entypo-facebook" target="_blank"><span>Facebook</span></a></li>
         <li><a href="http://twitter.com/CrimsonCowardrealestate" class="entypo-twitter" target="_blank"><span>Twitter</span></a></li>
@@ -103,8 +103,8 @@
         <li><a href="http://instagram.com/pbmlb" class="entypo-instagrem" target="_blank"><span>Instagram</span></a></li>
         <li><a href="http://www.youtube.com/channel/UCCBIIAGN2neJe4uvh_AK7Kw" class="entypo-video" target="_blank"><span>YouTube</span></a></li>
     </ul>
-</aside>
-                <div class="navbar navbar-default navbar-static-top" style="background-color: black;">
+</aside>--%>
+                <div class="navbar navbar-default navbar-static-top" style="background-color: white;">
                     <div class="container">
                         <div class="navbar-header">
                             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -113,7 +113,7 @@
                                 <span class="icon-bar"></span>
                             </button>
                             <a class="navbar-brand" href="/">
-                                <img src="/img/logo.png" style="height: 105px; margin-top: -20px" alt="logo" /></a>
+                                <img src="/assets/logo.png" style="height: 105px; margin-top: -20px" alt="logo" /></a>
                         </div>
 
 
