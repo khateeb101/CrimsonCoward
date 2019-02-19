@@ -52,6 +52,7 @@ Do not remove the back-link in this web template
     .navbar-brand img{
         padding-bottom:15px;
     }
+    
     .txt
     {
         width:100% !important;
@@ -166,9 +167,7 @@ position: fixed;
     margin-left: 30px;
     color:#364b78;
 }
-.topMenu a:hover{
-	color:#be4125;
-}
+
 .callusBanner{
 	background:url(../img/callusback.png) repeat;
 	font-size:20px;
@@ -285,17 +284,7 @@ h1,h2, h3, h4, h5, h6 {
     box-shadow: 0px 0px 10px 0px #656565;
     color:white;
 }
-.Title{
-    margin-top:35px !important;
-    margin-bottom:35px !important;
-    padding-left:10px !important;
-    border-left:solid #D12229 5px !important;
-    /*width:500px !important;*/
-    float:left;
-    font-family:'Open Sans';
-    font-size:20px;
-    text-transform:uppercase !important;
-}
+
 .container {
 	padding:0 20px 0 20px;
 	position:relative;
@@ -392,16 +381,16 @@ header .navbar-default .navbar-nav > .open > a:focus {
     -o-transition: all .3s ease;
     transition: all .3s ease;
 }
-
-
+.navbar-nav .menu_social{
+    padding-left: 20px;
+    padding-top: 35px;
+}
+.navbar-nav .menu_social img:hover{
+    border-bottom:solid 2px #832623;
+}
 header .navbar {
     min-height: 120px;
 	padding:18px 0 0;
-}
-
-header .navbar-nav > li  {
-    padding-bottom: 12px;
-    padding-top: 12px;
 }
 
 header  .navbar-nav > li > a {
@@ -534,24 +523,20 @@ header ul.nav li ul li a {
 
 
 .navbar .nav > li > a {
-  color: #EAEAEA;
+  color: #E9B244;
   text-shadow: none;
   padding-right: 20px;
   font-size:16px !important;
   padding-left: 20px;
-  font-weight:500 !important;
+  font-weight:bold;
+  font-weight:800 !important;
 }
 
 .navbar .nav a:hover {
-	/*background-color: #D12229 !important;*/
-    background-color:none !important;
+    color:#832623 !important;
     font-style:unset !important;
 }
-.navbar .nav .li a:hover {
-	background-color: #D12229 !important;
-    background-color:none;
-}
-
+ 
 .navbar .nav > .active > a,.navbar .nav > .active > a:hover {
 	background:none;
 	font-weight:700;
@@ -620,10 +605,46 @@ display: inline-block;
 }
 #story{
 	width: 100%;
-	background-color:rgb(241,178,38);
+	background:url(../assets/OurStory.jpg);
+    height:410px;
 	position:relative;
 	margin:0;
 	padding:0;
+}
+ 
+ 
+#story .title{
+      text-align:center;
+    color:#832623;
+    margin-top:35px !important;
+    margin-bottom:35px !important;
+    float:left;
+    font-family:'Open Sans';
+    font-size:50px;
+    text-transform:uppercase !important;
+    width:100%;
+}
+#story .text {
+    text-align:center;
+    font-size:30px;
+    width:100%;
+    color:black;
+    padding-left:90px;
+    padding-right:90px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    line-height:35px;
+}
+.article{
+    height:500px;
+}
+.article #article1, .article #article2{
+    height:100%;
+}
+#article1 {
+    background-image:url(../assets/article1.jpg)
+}
+#article2 {
+    background-image:url(../assets/article2.jpg)
 }
 /*  Sliders
 ==================================== */

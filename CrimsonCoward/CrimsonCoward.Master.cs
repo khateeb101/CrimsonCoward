@@ -11,10 +11,7 @@ namespace CrimsonCoward
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-          //if (Page is home)
-          //{
-          //    winnerBadge.Visible = true;
-          //}
+
         }
     }
 }

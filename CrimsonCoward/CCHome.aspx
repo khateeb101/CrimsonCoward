@@ -28,12 +28,20 @@
         <!-- end slider -->
     </section>
      <section id="story" style="position: relative;">
-           <h3 class="Title">OUR STORY</h3>
-         <p>
+           <h3 class="title">OUR STORY</h3>
+         <p class="text">
              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
          </p>
          </section>
-       <div class="container">
+    <section id="article" style="position:relative;">
+          <div id="article1" class="col-lg-6 article">
+           </div>
+          <div id="article2" class="col-lg-6 article">
+           </div>
+    </section>   
+    <div class="container">
+
+         
           <h3 class="Title">Latest Properties</h3>
            <div id="Titlebtn1" style="width: 35%; margin-top: 35px; display: none; float: right">
                         <asp:HyperLink Text="Post Request" NavigateUrl="~/PostRequest.aspx" Width="135px" CssClass="btn" runat="server" />
