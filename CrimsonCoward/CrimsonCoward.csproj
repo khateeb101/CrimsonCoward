@@ -124,10 +124,15 @@
     <Content Include="Admin\HomeTipsAdmin.aspx" />
     <Content Include="Admin\NewsAdmin.aspx" />
     <Content Include="Admin\PagesAdmin.aspx" />
+    <Content Include="assets\AjaxControlToolkit.dll" />
     <Content Include="assets\Article1.jpg" />
     <Content Include="assets\Article2.jpg" />
     <Content Include="assets\CC_Assets_Header_Arrow-Left.png" />
     <Content Include="assets\CC_Assets_Header_Arrow-Right.png" />
+    <Content Include="assets\CC_Assets_Titles_Follow-US.png" />
+    <Content Include="assets\CC_Assets_Titles_MENU.png" />
+    <Content Include="assets\CC_Assets_Titles_OUR-STORY.png" />
+    <Content Include="assets\CC_Assets_Titles_Shape.png" />
     <Content Include="assets\Facebook.png" />
     <Content Include="assets\HeaderItem.png" />
     <Content Include="assets\Instagram.png" />
@@ -631,7 +636,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50337</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:47486/</IISUrl>
+          <IISUrl>http://localhost:4783/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

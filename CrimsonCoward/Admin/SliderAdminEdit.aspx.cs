@@ -77,13 +77,14 @@ namespace CrimsonCoward.Admin
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
+
             DAL.CrimsonCowardEntities db = new DAL.CrimsonCowardEntities();
             DAL.Image data = fillSliders();
             db.Images.Add(data);
             db.SaveChanges();
             db.Sliders.Add(new Slider { ImageId = data.Id, Active = chkActive.Checked });
             db.SaveChanges();
-            Response.Redirect("~/Admin/PartnershipsAdmin.aspx");
+            Response.Redirect("~/Admin/SliderAdmin.aspx");
         }
     }
 }

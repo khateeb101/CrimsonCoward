@@ -606,7 +606,7 @@ display: inline-block;
 #story{
 	width: 100%;
 	background:url(../assets/OurStory.jpg);
-    height:410px;
+   
 	position:relative;
 	margin:0;
 	padding:0;
@@ -625,14 +625,15 @@ display: inline-block;
     width:100%;
 }
 #story .text {
+    margin-left:auto;margin-right:auto;
     text-align:center;
-    font-size:30px;
-    width:100%;
+    
+    width:90%;
     color:black;
-    padding-left:90px;
-    padding-right:90px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    line-height:35px;
+  
+    font-weight:bold;
+    font-family: 'Lato', sans-serif;
+   
 }
 .article{
     height:500px;
@@ -641,10 +642,10 @@ display: inline-block;
     height:100%;
 }
 #article1 {
-    background-image:url(../assets/article1.jpg)
+        background: url(../assets/article1.jpg) center;
 }
 #article2 {
-    background-image:url(../assets/article2.jpg)
+        background: url(../assets/article2.jpg) center;
 }
 /*  Sliders
 ==================================== */
