@@ -584,6 +584,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\forms.less" />
@@ -613,7 +614,6 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="CrimsonCoward.Master" />
-    <None Include="Properties\PublishProfiles\Profile1.pubxml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CrimsonCoward.DAL\CrimsonCoward.DAL.csproj">

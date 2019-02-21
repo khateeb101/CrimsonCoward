@@ -39,7 +39,7 @@ namespace CrimsonCoward.Admin
                     
                     if (data.File != null)
                     {
-                        imgview.ImageUrl = ResolveUrl("~/") + "Thumbnail.aspx?SliderId=" + data.Id.ToString() + "&secImg=HomeTips";
+                        imgview.ImageUrl = ResolveUrl("~/") + "Thumbnail.aspx?SliderId=" + _id + "&secImg=HomeTips";
                         imgview.Visible = true;
                     }
                 }
@@ -77,8 +77,16 @@ namespace CrimsonCoward.Admin
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-
+            
             DAL.CrimsonCowardEntities db = new DAL.CrimsonCowardEntities();
+            if (Request.Params["id"] != null)
+            {
+                var id = int.Parse(Request.Params["id"]);
+                var slider = db.Sliders.Where(x => x.Id == id).FirstOrDefault();
+                var image = db.Images.Where(x => x.Id == slider.ImageId).FirstOrDefault();
+                db.Images.Remove(image);
+                db.Sliders.Remove(slider);
+            }
             DAL.Image data = fillSliders();
             db.Images.Add(data);
             db.SaveChanges();

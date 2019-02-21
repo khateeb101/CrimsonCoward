@@ -30,6 +30,8 @@ namespace CrimsonCoward.Admin
                 var image = db.Images.Where(x => x.Id == slider.ImageId).FirstOrDefault();
                 db.Images.Remove(image);
                 db.Sliders.Remove(slider);
+                db.SaveChanges();
+                SlidersGridView.DataSource = db.Sliders.ToList();
                 SlidersGridView.DataBind();
             }
         }

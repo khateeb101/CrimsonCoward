@@ -70,25 +70,20 @@ namespace CrimsonCoward
             if (Request.Params["id"] != null)
             {
                 
-                var _id = Request.Params["id"];
-                PropertyImage img = db.PropertyImages.Where(x => x.PRL == _id).FirstOrDefault();
+                var _id = int.Parse(Request.Params["id"]);
+                DAL.Image img = db.Images.Where(x => x.Id == _id).FirstOrDefault();
 
 
                  if (img != null)
                  {
-                          if (img.Image == null || img.Image.Length == 0)
+                          if (img.File == null || img.File.Length == 0)
                           {
-                              if (img.PropertyType.ToLower() == "land")
-                              {
+                             
                                   b = File.ReadAllBytes(MapPath("~/assets/logo.png"));
-                              }
-                              else
-                              {
-                                  b = File.ReadAllBytes(MapPath("~/assets/logo.png"));
-                              }
+                              
                           }
                           else
-                              b = img.Image;
+                              b = img.File;
                       }
                       else
                       {

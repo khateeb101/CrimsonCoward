@@ -84,9 +84,9 @@
 
                         <div class="navbar-collapse collapse text-center">
                             <ul class="nav navbar-nav " style="margin-top:30px">
-                                <li class="MenuItem" id="menu_Home"><a href="javascript:scroll(0,0)">HOME</a></li>
-                                <li class="MenuItem" id="menu_Story"><a href="javascript:scroll(0,$('#story').position().top+120)">OUR STORY</a></li>
-                                <li class="MenuItem" id="menu_ContactUs"><a href="#">CONTACT US</a></li>
+                                <li class="MenuItem" id="menu_Home"><a href="javascript:$('html, body').animate({ scrollTop: 0 }, 700);">HOME</a></li>
+                                <li class="MenuItem" id="menu_Story"><a href="javascript:$('html, body').animate({ scrollTop: $('#story').position().top},700);">OUR STORY</a></li>
+                                <li class="MenuItem" id="menu_ContactUs"><a href="javascript:$('html, body').animate({ scrollTop: $(document).height()},700);"">CONTACT US</a></li>
                                  <li class="MenuItem" style="border-left: solid 2px #832623;height: 44px; margin-left:60px" id="menu_seperator"></li>
                             </ul>
                             <ul class="nav navbar-nav ">
@@ -112,49 +112,10 @@
                 <asp:ContentPlaceHolder ID="MainContent" runat="server">
                 </asp:ContentPlaceHolder>
             </div>
-            <footer>
-                <div class="container">
-                    <div id="Footerbtn1" style="width:35%; float:left">
-                    <asp:HyperLink Text="Post Request" NavigateUrl="~/PostRequest.aspx" Width="135px" CssClass="btn" runat="server" />
-                    <asp:HyperLink Text="Post Property" NavigateUrl="~/PostProperty.aspx" Width="140px" CssClass="btn" runat="server" />
-                    </div>
-                     <div  id="Footerbtn2"  style="width:35%; float:right; text-align:right">
-                         <asp:HyperLink Text="Find Your Property" NavigateUrl="~/Properties.aspx"  CssClass="btnBlack right" runat="server" />
-                    </div>
-                    <div id="FooterSocial"   style="width:30%; float:left">
-                        <ul class="social-network">
-                            <li style="padding-right: 10px;border-right: solid 1px #ccc;padding-top: 10px;"><a href=" https://www.facebook.com/CrimsonCoward-Real-Estate-in-Lebanon-134698633210668/?ref=page_internal" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-                            <li style="padding-right: 10px;border-right: solid 1px #ccc;padding-top: 10px;"><a href="http://instagram.com/pbmlb" data-placement="top" title="Instagram"><i class="fa fa-instagram"></i></a></li>
-                            <li style="padding-right: 10px;border-right: solid 1px #ccc;padding-top: 10px;"><a href="http://www.linkedin.com/groups?gid=3271357&trk=hb_side_g" data-placement="top" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-                            <li style="padding-right: 10px;border-right: solid 1px #ccc;padding-top: 10px;"><a href="http://twitter.com/CrimsonCowardrealestate" data-placement="top" title="twitter"><i class="fa fa-twitter"></i></a></li>
-                            <li style="padding-right: 10px;padding-top: 10px;"><a href="http://www.youtube.com/channel/UCCBIIAGN2neJe4uvh_AK7Kw" data-placement="top" title="YouTube"><i class="fa fa-youtube"></i></a></li>
-                        </ul>
-                        <br />
 
-                          <div  style="width:100% ;text-align:center" >
-                        <span style="text-align:center;color:gray"><a href="pbm-leb.com" style="font-size:14px;text-align:center;color: gray;"> pbm-leb.com</a> | all rights reserved</span>
-                    </div>
-                    </div>
-                   
-                    
-                </div>
-               
-                <div id="sub-footer">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="copyright">
-                                    <p>
-                                        <a href="Rems.me" style="color:white;font-size:medium">&copy; REMS S.a.l 2017  </a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+
             <a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
-        </div>
+      
     </form>
     <script type="text/javascript">
         if (document.getElementById(menuID)) {
