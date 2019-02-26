@@ -37,6 +37,12 @@
         <AssociationConnector Association="CrimsonCowardModel.aspnet_UsersInRoles" ManuallyRouted="false" />
         <EntityTypeShape EntityType="CrimsonCowardModel.Image" Width="1.5" PointX="10.375" PointY="13.75" />
         <EntityTypeShape EntityType="CrimsonCowardModel.Slider" Width="1.5" PointX="13.375" PointY="12.75" />
+        <EntityTypeShape EntityType="CrimsonCowardModel.Article" Width="1.5" PointX="5.375" PointY="14.75" />
+        <EntityTypeShape EntityType="CrimsonCowardModel.Review" Width="1.5" PointX="7.375" PointY="14.75" />
+        <EntityTypeShape EntityType="CrimsonCowardModel.FoodCategory" Width="1.5" PointX="15.375" PointY="0.875" />
+        <EntityTypeShape EntityType="CrimsonCowardModel.FoodMenu" Width="1.5" PointX="17.625" PointY="0.875" />
+        <AssociationConnector Association="CrimsonCowardModel.FK_FoodCategory_FoodCategory" />
+        <AssociationConnector Association="CrimsonCowardModel.FK_FoodMenu_FoodCategory" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

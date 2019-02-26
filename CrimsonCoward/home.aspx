@@ -8,7 +8,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <section id="featured" style="position: relative;">
-        <!-- Slider -->
+        <!-- Slider -->test push
         <div id="main-slider" class="flexslider">
 
             <div class="flex-caption">
