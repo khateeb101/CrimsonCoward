@@ -12,12 +12,15 @@ namespace CrimsonCoward.DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class Image
+    public partial class Review
     {
-        public int Id { get; set; }
-        public byte[] File { get; set; }
-        public string Name { get; set; }
-        public string Desc { get; set; }
-        public string Ext { get; set; }
+        public System.Guid Id { get; set; }
+        public string Link { get; set; }
+        public string Title { get; set; }
+        public string Text { get; set; }
+        public string Description { get; set; }
+        public Nullable<System.DateTime> Date { get; set; }
+        public Nullable<int> ImageID { get; set; }
+        public Nullable<bool> IsActive { get; set; }
     }
 }

@@ -5,6 +5,19 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="CrimsonCowardModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Article">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="link" Type="nvarchar(max)" />
+          <Property Name="title" Type="nvarchar(max)" />
+          <Property Name="Body" Type="nvarchar(max)" />
+          <Property Name="description" Type="nvarchar(max)" />
+          <Property Name="date" Type="datetime" />
+          <Property Name="Subtitle" Type="nvarchar(max)" />
+          <Property Name="isDouble" Type="bit" />
+        </EntityType>
         <EntityType Name="aspnet_Applications">
           <Key>
             <PropertyRef Name="ApplicationId" />
@@ -173,6 +186,24 @@
           <Property Name="title" Type="nvarchar(max)" />
           <Property Name="text" Type="nvarchar(max)" />
         </EntityType>
+        <EntityType Name="FoodCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="240" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="2500" />
+        </EntityType>
+        <EntityType Name="FoodMenu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="Name" Type="nvarchar" MaxLength="240" Nullable="false" />
+          <Property Name="Price" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="CategoryID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
         <EntityType Name="HomeTips">
           <Key>
             <PropertyRef Name="Id" />
@@ -193,7 +224,7 @@
           <Property Name="File" Type="image" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" />
           <Property Name="Desc" Type="nvarchar(max)" />
-          <Property Name="ext" Type="nchar" MaxLength="10" />
+          <Property Name="Ext" Type="nchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="News">
           <Key>
@@ -283,6 +314,19 @@
           <Property Name="Features" Type="nvarchar(max)" />
           <Property Name="MapLong" Type="nvarchar(max)" />
           <Property Name="MapLat" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Reviews">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Link" Type="nvarchar(max)" />
+          <Property Name="Title" Type="nvarchar(max)" />
+          <Property Name="Text" Type="nvarchar(max)" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="ImageID" Type="int" />
+          <Property Name="IsActive" Type="bit" />
         </EntityType>
         <EntityType Name="Slider">
           <Key>
@@ -429,6 +473,30 @@ warning 6002: The table/view 'CrimsonCoward.dbo.Subscribers' does not have a pri
             </Principal>
             <Dependent Role="aspnet_UsersInRoles">
               <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FoodCategory_FoodCategory">
+          <End Role="FoodCategory" Type="Self.FoodCategory" Multiplicity="1" />
+          <End Role="FoodCategory1" Type="Self.FoodCategory" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="FoodCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FoodCategory1">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FoodMenu_FoodCategory">
+          <End Role="FoodCategory" Type="Self.FoodCategory" Multiplicity="1" />
+          <End Role="FoodMenu" Type="Self.FoodMenu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FoodCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FoodMenu">
+              <PropertyRef Name="CategoryID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1118,6 +1186,7 @@ warning 6002: The table/view 'CrimsonCoward.dbo.Subscribers' does not have a pri
           <Parameter Name="qadaa" Type="nvarchar(max)" Mode="In" />
         </Function>
         <EntityContainer Name="CrimsonCowardModelStoreContainer">
+          <EntitySet Name="Article" EntityType="Self.Article" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="aspnet_Applications" EntityType="Self.aspnet_Applications" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="aspnet_Membership" EntityType="Self.aspnet_Membership" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="aspnet_Paths" EntityType="Self.aspnet_Paths" Schema="dbo" store:Type="Tables" />
@@ -1133,12 +1202,15 @@ warning 6002: The table/view 'CrimsonCoward.dbo.Subscribers' does not have a pri
           <EntitySet Name="BlogCat" EntityType="Self.BlogCat" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Careers" EntityType="Self.Careers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Data" EntityType="Self.Data" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FoodCategory" EntityType="Self.FoodCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FoodMenu" EntityType="Self.FoodMenu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="HomeTips" EntityType="Self.HomeTips" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Images" EntityType="Self.Images" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Partnership" EntityType="Self.Partnership" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PropertyImage" EntityType="Self.PropertyImage" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RealEstateProperty" EntityType="Self.RealEstateProperty" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reviews" EntityType="Self.Reviews" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Slider" EntityType="Self.Slider" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Subscribers" EntityType="Self.Subscribers" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -1188,6 +1260,14 @@ warning 6002: The table/view 'CrimsonCoward.dbo.Subscribers' does not have a pri
           <AssociationSet Name="FK__aspnet_Us__UserI__44952D46" Association="Self.FK__aspnet_Us__UserI__44952D46">
             <End Role="aspnet_Users" EntitySet="aspnet_Users" />
             <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FoodCategory_FoodCategory" Association="Self.FK_FoodCategory_FoodCategory">
+            <End Role="FoodCategory" EntitySet="FoodCategory" />
+            <End Role="FoodCategory1" EntitySet="FoodCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FoodMenu_FoodCategory" Association="Self.FK_FoodMenu_FoodCategory">
+            <End Role="FoodCategory" EntitySet="FoodCategory" />
+            <End Role="FoodMenu" EntitySet="FoodMenu" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -2337,6 +2417,18 @@ warning 6002: The table/view 'CrimsonCoward.dbo.Subscribers' does not have a pri
           </FunctionImport>
           <EntitySet Name="Images" EntityType="CrimsonCowardModel.Image" />
           <EntitySet Name="Sliders" EntityType="CrimsonCowardModel.Slider" />
+          <EntitySet Name="Articles" EntityType="CrimsonCowardModel.Article" />
+          <EntitySet Name="Reviews" EntityType="CrimsonCowardModel.Review" />
+          <EntitySet Name="FoodCategories" EntityType="CrimsonCowardModel.FoodCategory" />
+          <EntitySet Name="FoodMenus" EntityType="CrimsonCowardModel.FoodMenu" />
+          <AssociationSet Name="FK_FoodCategory_FoodCategory" Association="CrimsonCowardModel.FK_FoodCategory_FoodCategory">
+            <End Role="FoodCategory" EntitySet="FoodCategories" />
+            <End Role="FoodCategory1" EntitySet="FoodCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FoodMenu_FoodCategory" Association="CrimsonCowardModel.FK_FoodMenu_FoodCategory">
+            <End Role="FoodCategory" EntitySet="FoodCategories" />
+            <End Role="FoodMenu" EntitySet="FoodMenus" />
+          </AssociationSet>
         </EntityContainer>
         <ComplexType Name="aspnet_Membership_GetPassword_Result">
           <Property Type="String" Name="Column1" Nullable="true" MaxLength="128" />
@@ -2425,7 +2517,7 @@ warning 6002: The table/view 'CrimsonCoward.dbo.Subscribers' does not have a pri
           <Property Name="File" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ext" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Ext" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
         </EntityType>
         <EntityType Name="Slider">
           <Key>
@@ -2435,6 +2527,78 @@ warning 6002: The table/view 'CrimsonCoward.dbo.Subscribers' does not have a pri
           <Property Name="ImageId" Type="Int32" Nullable="false" />
           <Property Name="Active" Type="Boolean" Nullable="false" />
         </EntityType>
+        <EntityType Name="Article">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Body" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="date" Type="DateTime" Precision="3" />
+          <Property Name="Subtitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="isDouble" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Review">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="ImageID" Type="Int32" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="FoodCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="240" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="2500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="FoodCategory1" Relationship="CrimsonCowardModel.FK_FoodCategory_FoodCategory" FromRole="FoodCategory" ToRole="FoodCategory1" />
+          <NavigationProperty Name="FoodCategory2" Relationship="CrimsonCowardModel.FK_FoodCategory_FoodCategory" FromRole="FoodCategory1" ToRole="FoodCategory" />
+          <NavigationProperty Name="FoodMenus" Relationship="CrimsonCowardModel.FK_FoodMenu_FoodCategory" FromRole="FoodCategory" ToRole="FoodMenu" />
+        </EntityType>
+        <EntityType Name="FoodMenu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="240" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="CategoryID" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="FoodCategory" Relationship="CrimsonCowardModel.FK_FoodMenu_FoodCategory" FromRole="FoodMenu" ToRole="FoodCategory" />
+        </EntityType>
+        <Association Name="FK_FoodCategory_FoodCategory">
+          <End Type="CrimsonCowardModel.FoodCategory" Role="FoodCategory" Multiplicity="1" />
+          <End Type="CrimsonCowardModel.FoodCategory" Role="FoodCategory1" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="FoodCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FoodCategory1">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FoodMenu_FoodCategory">
+          <End Type="CrimsonCowardModel.FoodCategory" Role="FoodCategory" Multiplicity="1" />
+          <End Type="CrimsonCowardModel.FoodMenu" Role="FoodMenu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FoodCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FoodMenu">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2981,7 +3145,7 @@ warning 6002: The table/view 'CrimsonCoward.dbo.Subscribers' does not have a pri
           <EntitySetMapping Name="Images">
             <EntityTypeMapping TypeName="CrimsonCowardModel.Image">
               <MappingFragment StoreEntitySet="Images">
-                <ScalarProperty Name="ext" ColumnName="ext" />
+                <ScalarProperty Name="Ext" ColumnName="Ext" />
                 <ScalarProperty Name="Desc" ColumnName="Desc" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="File" ColumnName="File" />
@@ -2994,6 +3158,54 @@ warning 6002: The table/view 'CrimsonCoward.dbo.Subscribers' does not have a pri
               <MappingFragment StoreEntitySet="Slider">
                 <ScalarProperty Name="Active" ColumnName="Active" />
                 <ScalarProperty Name="ImageId" ColumnName="ImageId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Articles">
+            <EntityTypeMapping TypeName="CrimsonCowardModel.Article">
+              <MappingFragment StoreEntitySet="Article">
+                <ScalarProperty Name="isDouble" ColumnName="isDouble" />
+                <ScalarProperty Name="Subtitle" ColumnName="Subtitle" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="Body" ColumnName="Body" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="link" ColumnName="link" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reviews">
+            <EntityTypeMapping TypeName="CrimsonCowardModel.Review">
+              <MappingFragment StoreEntitySet="Reviews">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FoodCategories">
+            <EntityTypeMapping TypeName="CrimsonCowardModel.FoodCategory">
+              <MappingFragment StoreEntitySet="FoodCategory">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FoodMenus">
+            <EntityTypeMapping TypeName="CrimsonCowardModel.FoodMenu">
+              <MappingFragment StoreEntitySet="FoodMenu">
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
