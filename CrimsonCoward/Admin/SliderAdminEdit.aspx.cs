@@ -57,7 +57,7 @@ namespace CrimsonCoward.Admin
                     {
                             Session["image"] = Path.GetFileName(uplImage.FileName);
                             data.Name = uplImage.FileName.Split('.')[0].ToLower();
-                            data.ext = uplImage.FileName.Split('.')[1].ToLower();
+                            data.Ext = uplImage.FileName.Split('.')[1].ToLower();
                             data.Desc = "slider";
                             data.File = uplImage.FileBytes;                                                       
                     }

@@ -74,7 +74,7 @@
                          <div class="row col-lg-12">
                         <div class="col-lg-12 CenteredImage"  style="width:60%;padding-top:20px;">
                             <asp:TextBox placeholder="ENTER EMAIL ADDRESS" style="padding-left:10px;" BorderStyle="None" Width="70%" Height="50px" runat="server" ID="txtSubscribe" CssClass="text"></asp:TextBox>
-                            <asp:Button ID="btnSubscribe" runat="server" Width="25%" Height="50px" Text="STAY TUNED" BackColor="#E9B244" BorderStyle="None" ForeColor="White" Font-Bold="true" />
+                            <asp:Button OnClientClick="return validateEmail($this.text)" OnClick="btnSubscribe_Click" ID="btnSubscribe" runat="server" Width="25%" Height="50px" Text="STAY TUNED" BackColor="#E9B244" BorderStyle="None" ForeColor="White" Font-Bold="true" />
                         </div>
                              </div>
                            
@@ -102,7 +102,7 @@
             </div>
                           
                             <div class="col-lg-4" style="text-align:center">
-                                <asp:Button Text="CONTACT US!" BackColor="White" BorderStyle="None" style="border-radius:5px;" Font-Bold="true" ForeColor="#842522" Width="140px" Height="30px" runat="server" ID="btnContact" />
+                                <asp:Label runat="server" Text="CONTACT US!" BackColor="White" BorderStyle="None" style="border-radius:5px;" Font-Bold="true" ForeColor="#842522" Width="140px" Height="22px"   />
                                 <div class="clear"></div>
                                 
                                      <img ImageHeight="33px" src="~/assets/footer_Facebook.png" style="margin-top: 20px; margin-bottom:5px;" runat="server" />

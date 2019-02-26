@@ -123,6 +123,12 @@
     <Compile Include="fn_ParseCSVString_Result.cs">
       <DependentUpon>CrimsonCowardData.tt</DependentUpon>
     </Compile>
+    <Compile Include="FoodCategory.cs">
+      <DependentUpon>CrimsonCowardData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FoodMenu.cs">
+      <DependentUpon>CrimsonCowardData.tt</DependentUpon>
+    </Compile>
     <Compile Include="GetBlogsByCat_Result.cs">
       <DependentUpon>CrimsonCowardData.tt</DependentUpon>
     </Compile>
@@ -151,6 +157,9 @@
       <DependentUpon>CrimsonCowardData.tt</DependentUpon>
     </Compile>
     <Compile Include="PropertyImage.cs">
+      <DependentUpon>CrimsonCowardData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Review.cs">
       <DependentUpon>CrimsonCowardData.tt</DependentUpon>
     </Compile>
     <Compile Include="Slider.cs">

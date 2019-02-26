@@ -46,9 +46,12 @@ namespace CrimsonCoward.DAL
         public virtual DbSet<Partnership> Partnerships { get; set; }
         public virtual DbSet<PropertyImage> PropertyImages { get; set; }
         public virtual DbSet<RealEstateProperty> RealEstateProperties { get; set; }
-        public virtual DbSet<Subscriber> Subscribers { get; set; }
         public virtual DbSet<Image> Images { get; set; }
         public virtual DbSet<Slider> Sliders { get; set; }
+        public virtual DbSet<Review> Reviews { get; set; }
+        public virtual DbSet<FoodCategory> FoodCategories { get; set; }
+        public virtual DbSet<FoodMenu> FoodMenus { get; set; }
+        public virtual DbSet<Subscriber> Subscribers { get; set; }
     
         [DbFunction("CrimsonCowardEntities", "fn_ParseCSVString")]
         public virtual IQueryable<fn_ParseCSVString_Result> fn_ParseCSVString(string iDS)

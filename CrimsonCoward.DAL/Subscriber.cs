@@ -14,6 +14,7 @@ namespace CrimsonCoward.DAL
     
     public partial class Subscriber
     {
+        public int Id { get; set; }
         public string email { get; set; }
     }
 }

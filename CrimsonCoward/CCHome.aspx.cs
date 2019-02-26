@@ -28,21 +28,52 @@ namespace CrimsonCoward
             }
               
         }
+        bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
 
-      
+
         protected void btnSubscribe_Click(object sender, EventArgs e)
         {
-            //if (!string.IsNullOrEmpty(txtEmail.Text))
-            //{
-            //    CrimsonCowardEntities db = new CrimsonCowardEntities();
-            //    Subscriber subsc = new Subscriber();
-            //    db.Subscribers.Add(new Subscriber() {email = txtEmail.Text });
-            //    db.SaveChanges();
-            //    Response.Write("<script type='text/javascript'>");
-            //    Response.Write("alert('Dear " + txtEmail.Text + ". Kindly note that your Email has been successfully added!');");
-            //    Response.Write("document.location.href='home.aspx';");
-            //    Response.Write("</script>");
-            //}
+            if (!string.IsNullOrEmpty(txtSubscribe.Text))
+            {
+                if(IsValidEmail(txtSubscribe.Text))
+                {
+                    CrimsonCowardEntities db = new CrimsonCowardEntities();
+                    Subscriber subsc = new Subscriber();
+                    if (db.Subscribers.Where(x => x.email.ToLower() == txtSubscribe.Text.ToLower()).Count() > 0)
+                    {
+                        Response.Write("<script type='text/javascript'>");
+                        Response.Write("alert('Dear " + txtSubscribe.Text + ". your Email already exists');");
+                        Response.Write("document.location.href='cchome.aspx';");
+                        Response.Write("</script>");
+                        return;
+                    }
+                    db.Subscribers.Add(new Subscriber() {email = txtSubscribe.Text });
+                    db.SaveChanges();
+                    Response.Write("<script type='text/javascript'>");
+                    Response.Write("alert('Dear " + txtSubscribe.Text + ". Kindly note that your Email has been successfully added!');");
+                    Response.Write("document.location.href='cchome.aspx';");
+                    Response.Write("</script>");
+                }
+                else
+                {
+                    Response.Write("<script type='text/javascript'>");
+                    Response.Write("alert('Please enter a valid email address');");
+                    Response.Write("document.location.href='cchome.aspx';");
+                    Response.Write("</script>");
+                }
+             
+            }
 
         }
     }
