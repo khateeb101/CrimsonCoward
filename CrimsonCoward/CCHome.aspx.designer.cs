@@ -22,6 +22,24 @@ namespace CrimsonCoward {
         protected global::System.Web.UI.WebControls.Repeater rptBanner;
         
         /// <summary>
+        /// up1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel up1;
+        
+        /// <summary>
+        /// lblSubscribe control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSubscribe;
+        
+        /// <summary>
         /// txtSubscribe control.
         /// </summary>
         /// <remarks>

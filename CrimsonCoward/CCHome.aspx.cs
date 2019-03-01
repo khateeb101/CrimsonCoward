@@ -52,25 +52,19 @@ namespace CrimsonCoward
                     Subscriber subsc = new Subscriber();
                     if (db.Subscribers.Where(x => x.email.ToLower() == txtSubscribe.Text.ToLower()).Count() > 0)
                     {
-                        Response.Write("<script type='text/javascript'>");
-                        Response.Write("alert('Dear " + txtSubscribe.Text + ". your Email already exists');");
-                        Response.Write("document.location.href='cchome.aspx';");
-                        Response.Write("</script>");
+                        lblSubscribe.Text = "Dear " + txtSubscribe.Text + ". Your Email already exists";
+                        lblSubscribe.ForeColor = System.Drawing.Color.Yellow;
                         return;
                     }
                     db.Subscribers.Add(new Subscriber() {email = txtSubscribe.Text });
                     db.SaveChanges();
-                    Response.Write("<script type='text/javascript'>");
-                    Response.Write("alert('Dear " + txtSubscribe.Text + ". Kindly note that your Email has been successfully added!');");
-                    Response.Write("document.location.href='cchome.aspx';");
-                    Response.Write("</script>");
+                    lblSubscribe.Text = "Dear " + txtSubscribe.Text + ". Kindly note that your Email has been successfully added!";
+                    lblSubscribe.ForeColor =  System.Drawing.Color.White;
                 }
                 else
                 {
-                    Response.Write("<script type='text/javascript'>");
-                    Response.Write("alert('Please enter a valid email address');");
-                    Response.Write("document.location.href='cchome.aspx';");
-                    Response.Write("</script>");
+                    lblSubscribe.Text = "Please enter a valid email address!";
+                    lblSubscribe.ForeColor = System.Drawing.Color.Yellow;
                 }
              
             }
