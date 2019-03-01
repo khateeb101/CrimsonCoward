@@ -69,7 +69,7 @@ namespace CrimsonCoward
                 db.SaveChanges();
                 Response.Write("<script type='text/javascript'>");
                 Response.Write("alert('Dear " + txtEmail.Text + ". Kindly note that your Email has been successfully added!');");
-                Response.Write("document.location.href='home.aspx';");
+                Response.Write("document.location.href='CCHome.aspx';");
                 Response.Write("</script>");
             }
 

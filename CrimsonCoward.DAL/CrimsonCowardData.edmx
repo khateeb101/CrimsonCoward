@@ -327,6 +327,7 @@
           <Property Name="Date" Type="datetime" />
           <Property Name="ImageID" Type="int" />
           <Property Name="IsActive" Type="bit" />
+          <Property Name="Rating" Type="int" />
         </EntityType>
         <EntityType Name="Slider">
           <Key>
@@ -336,12 +337,11 @@
           <Property Name="ImageId" Type="int" Nullable="false" />
           <Property Name="Active" Type="bit" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'CrimsonCoward.dbo.Subscribers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Subscribers">
           <Key>
-            <PropertyRef Name="email" />
+            <PropertyRef Name="Id" />
           </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="email" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <Association Name="FK__aspnet_Me__Appli__22401542">
@@ -1212,11 +1212,7 @@ warning 6002: The table/view 'CrimsonCoward.dbo.Subscribers' does not have a pri
           <EntitySet Name="RealEstateProperty" EntityType="Self.RealEstateProperty" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Reviews" EntityType="Self.Reviews" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Slider" EntityType="Self.Slider" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Subscribers" EntityType="Self.Subscribers" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Subscribers].[email] AS [email]
-    FROM [dbo].[Subscribers] AS [Subscribers]</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="Subscribers" EntityType="Self.Subscribers" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__aspnet_Me__Appli__22401542" Association="Self.FK__aspnet_Me__Appli__22401542">
             <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
             <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
@@ -1560,9 +1556,10 @@ warning 6002: The table/view 'CrimsonCoward.dbo.Subscribers' does not have a pri
         </EntityType>
         <EntityType Name="Subscriber">
           <Key>
-            <PropertyRef Name="email" />
+            <PropertyRef Name="Id" />
           </Key>
           <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         <Association Name="FK__aspnet_Me__Appli__22401542">
           <End Role="aspnet_Applications" Type="Self.aspnet_Applications" Multiplicity="1" />
@@ -2418,7 +2415,7 @@ warning 6002: The table/view 'CrimsonCoward.dbo.Subscribers' does not have a pri
           <EntitySet Name="Images" EntityType="CrimsonCowardModel.Image" />
           <EntitySet Name="Sliders" EntityType="CrimsonCowardModel.Slider" />
           <EntitySet Name="Articles" EntityType="CrimsonCowardModel.Article" />
-          <EntitySet Name="Reviews" EntityType="CrimsonCowardModel.Review" />
+          <EntitySet Name="Reviews" EntityType="CrimsonCowardModel.Reviews" />
           <EntitySet Name="FoodCategories" EntityType="CrimsonCowardModel.FoodCategory" />
           <EntitySet Name="FoodMenus" EntityType="CrimsonCowardModel.FoodMenu" />
           <AssociationSet Name="FK_FoodCategory_FoodCategory" Association="CrimsonCowardModel.FK_FoodCategory_FoodCategory">
@@ -2540,7 +2537,7 @@ warning 6002: The table/view 'CrimsonCoward.dbo.Subscribers' does not have a pri
           <Property Name="Subtitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="isDouble" Type="Boolean" />
         </EntityType>
-        <EntityType Name="Review">
+        <EntityType Name="Reviews">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -2552,6 +2549,7 @@ warning 6002: The table/view 'CrimsonCoward.dbo.Subscribers' does not have a pri
           <Property Name="Date" Type="DateTime" Precision="3" />
           <Property Name="ImageID" Type="Int32" />
           <Property Name="IsActive" Type="Boolean" />
+          <Property Name="Rating" Type="Int32" />
         </EntityType>
         <EntityType Name="FoodCategory">
           <Key>
@@ -2887,6 +2885,7 @@ warning 6002: The table/view 'CrimsonCoward.dbo.Subscribers' does not have a pri
           <EntitySetMapping Name="Subscribers">
             <EntityTypeMapping TypeName="CrimsonCowardModel.Subscriber">
               <MappingFragment StoreEntitySet="Subscribers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="email" ColumnName="email" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -3177,8 +3176,9 @@ warning 6002: The table/view 'CrimsonCoward.dbo.Subscribers' does not have a pri
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Reviews">
-            <EntityTypeMapping TypeName="CrimsonCowardModel.Review">
+            <EntityTypeMapping TypeName="CrimsonCowardModel.Reviews">
               <MappingFragment StoreEntitySet="Reviews">
+                <ScalarProperty Name="Rating" ColumnName="Rating" />
                 <ScalarProperty Name="IsActive" ColumnName="IsActive" />
                 <ScalarProperty Name="ImageID" ColumnName="ImageID" />
                 <ScalarProperty Name="Date" ColumnName="Date" />

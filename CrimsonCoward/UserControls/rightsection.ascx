@@ -9,7 +9,7 @@
     AWARDS ARABIA<br />
     </div>
 </div>
-<asp:HyperLink NavigateUrl="~/home.aspx" runat="server">
+<asp:HyperLink NavigateUrl="~/CCHome.aspx" runat="server">
     <asp:Image ImageUrl="~/images/search_property.png" AlternateText="Search Property" ID="btnSearch" runat="server"
         Style="margin-top: 60px;" onmouseover="this.src='/images/search_property_on.png';"
         onmouseout="this.src='/images/search_property.png';" /></asp:HyperLink>

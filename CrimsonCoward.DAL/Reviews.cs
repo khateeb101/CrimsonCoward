@@ -12,7 +12,7 @@ namespace CrimsonCoward.DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class Review
+    public partial class Reviews
     {
         public System.Guid Id { get; set; }
         public string Link { get; set; }
@@ -22,5 +22,6 @@ namespace CrimsonCoward.DAL
         public Nullable<System.DateTime> Date { get; set; }
         public Nullable<int> ImageID { get; set; }
         public Nullable<bool> IsActive { get; set; }
+        public Nullable<int> Rating { get; set; }
     }
 }

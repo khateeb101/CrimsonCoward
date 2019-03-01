@@ -30,7 +30,7 @@ namespace CrimsonCoward
                 Roles.AddUserToRole(mu.UserName, "Admin");
             }
 
-            RouteTable.Routes.MapPageRoute("home", "", "~/home.aspx");
+            RouteTable.Routes.MapPageRoute("home", "", "~/CCHome.aspx");
             RouteTable.Routes.MapPageRoute("about", "AboutUs", "~/aboutUs.aspx");
             RouteTable.Routes.MapPageRoute("PostProperty", "PostProperty", "~/Postproperty.aspx");
             RouteTable.Routes.MapPageRoute("PostRequest", "PostRequest", "~/PostRequest.aspx");
@@ -43,6 +43,7 @@ namespace CrimsonCoward
             RouteTable.Routes.MapPageRoute("careers", "Careers", "~/careers.aspx");
             RouteTable.Routes.MapPageRoute("projects listing", "OurProjects", "~/properties.aspx");
             RouteTable.Routes.MapPageRoute("login", "login", "~/login.aspx");
+            RouteTable.Routes.MapPageRoute("admin", "", "~/admin/.Newsadmin.aspx");
 
             RouteTable.Routes.MapPageRoute("OurProperties12", "OurProperties/{For}/{Type}/{MinPrice}/{MaxPrice}/{MinSize}/{MaxSize}/{Region}/{Keyword}", "~/properties.aspx");
             RouteTable.Routes.MapPageRoute("OurProperties11", "OurProperties/{For}/{Type}/{MinPrice}/{MaxPrice}/{MinSize}/{MaxSize}/{Region}", "~/properties.aspx");
