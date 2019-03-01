@@ -60,6 +60,12 @@
             <img src="assets/CC_Assets_Titles_Follow-US.png" alt="Follow us" style="width: 100%" />
         </div>
     </section>
+    <section id="ReviewsSection" style="position: relative;">
+        <div id="Reviews" class="col-lg-8 CenteredImage" style="height: 335px;">
+           <div id="ReviewsBox" style="height: 250px;box-shadow: 5px 10px 30px 10px #c7c6c6;border-radius: 20px;margin-left: auto;margin-right: auto;background-color:#f5f5f594;">
+           </div>
+        </div>
+    </section>
     <section id="map" style="position: relative;">
         <div id="map1" class="col-lg-12 article" style="padding: 0px; height: 300px">
             <div class="col-md-12 newsbox" style="padding-left: 0px !important; padding-right: 0px !important; background-color: darkgray">
@@ -71,21 +77,29 @@
     </section>
     <section id="footer">
                     <div style="background-color:#842522;display:inline-block; width:100%; border-top:10px solid #E9B244">
-                         <div class="row col-lg-12">
+                         <div class="col-lg-12">
                         <div class="col-lg-12 CenteredImage"  style="width:60%;padding-top:20px;">
-                            <asp:TextBox placeholder="ENTER EMAIL ADDRESS" style="padding-left:10px;" BorderStyle="None" Width="70%" Height="50px" runat="server" ID="txtSubscribe" CssClass="text"></asp:TextBox>
-                            <asp:Button OnClientClick="return validateEmail($this.text)" OnClick="btnSubscribe_Click" ID="btnSubscribe" runat="server" Width="25%" Height="50px" Text="STAY TUNED" BackColor="#E9B244" BorderStyle="None" ForeColor="White" Font-Bold="true" />
+                               <asp:UpdatePanel ID="up1" runat="server">
+    <ContentTemplate>
+      <asp:Label id="lblSubscribe" ForeColor="White" style="text-align:center;font-weight:bold;" runat="server" />
+ <asp:TextBox placeholder="ENTER EMAIL ADDRESS" style="padding-left:10px;" BorderStyle="None" Width="70%" Height="50px" runat="server" ID="txtSubscribe" CssClass="text"></asp:TextBox>
+                                      
+                            <asp:Button runat="server"  OnClick="btnSubscribe_Click" ID="btnSubscribe" Width="25%" Height="50px" Text="STAY TUNED" BackColor="#E9B244" BorderStyle="None" ForeColor="White" Font-Bold="true" />
+     
+    </ContentTemplate>
+    </asp:UpdatePanel>
+                           
                         </div>
                              </div>
                            
-                         <div class="row col-lg-12" style="text-align:center">
+                         <div class="col-lg-12" style="text-align:center">
                         <div class="col-lg-12 CenteredImage"  style="width:60%">
                           <h3 style="color:white; font-weight:bold;">DO YOU NEED ANY HELP?</h3>
                             <h5 style="color:white; font-weight:lighter">“Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.”</h5>
                         </div>
                             </div>
-                        <div class="row col-lg-12">
-                            <div class="col-lg-push-1 col-lg-4 col-sm-12 col-sm-push-0">
+                        <div class="col-lg-12">
+                            <div class="col-lg-push-1 col-lg-4">
                                
                 <h4 style="color: white;">HOURS OF OPERATION</h4>
                 <h5 style="color: white;">MONDAY - Sunday<br />
@@ -94,7 +108,7 @@
                     <br />
                     Downey CA 90241</h5><br />
 
-                                <div>
+                                <div >
                                 <a style="color:white; font-weight:bold" href="javascript:$('html, body').animate({ scrollTop: 0 }, 700);">HOME</a>&nbsp-&nbsp
                                 <a style="color:white; font-weight:bold" href="javascript:$('html, body').animate({ scrollTop: $('#story').position().top},700);">OUR STORY</a>&nbsp-&nbsp
                                 <a style="color:white; font-weight:bold" href="javascript:$('html, body').animate({ scrollTop: $(document).height()},700);"">CONTACT US</a>
@@ -113,7 +127,7 @@
                                  
                                 
                             </div>
-                            <div class="col-lg-pull-1 col-lg-4  col-sm-12 col-sm-pull-0" style="text-align:right">
+                            <div class="col-lg-pull-1 col-lg-4" style="text-align:right">
                                 <img  src="assets/footer_logo.png" />
                                 <h5 style="color:white">Copyright © 2019 - CRIMSON COWARD - All Rights Reserved</h5>
                             </div>
