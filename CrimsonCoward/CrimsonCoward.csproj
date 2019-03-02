@@ -109,10 +109,10 @@
     <Content Include="Admin\assets\scripts\flot-demo.js" />
     <Content Include="Admin\assets\scripts\morris-demo.js" />
     <Content Include="Admin\assets\scripts\siminta.js" />
-    <Content Include="Admin\BlogsCatAdmin.aspx" />
-    <Content Include="Admin\BlogCatAdminEdit.aspx" />
-    <Content Include="Admin\BlogsAdmin.aspx" />
-    <Content Include="Admin\BlogAdminEdit.aspx" />
+    <Content Include="Admin\CategoryAdmin.aspx" />
+    <Content Include="Admin\CategoryAdminEdit.aspx" />
+    <Content Include="Admin\FoodMenuAdmin.aspx" />
+    <Content Include="Admin\FoodMenuAdminEdit.aspx" />
     <Content Include="Admin\ReviewsAdmin.aspx" />
     <Content Include="Admin\SliderAdmin.aspx" />
     <Content Include="Admin\ReviewsAdminEdit.aspx" />
@@ -324,33 +324,33 @@
     <Compile Include="Admin\Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
     </Compile>
-    <Compile Include="Admin\BlogsCatAdmin.aspx.cs">
-      <DependentUpon>BlogsCatAdmin.aspx</DependentUpon>
+    <Compile Include="Admin\CategoryAdmin.aspx.cs">
+      <DependentUpon>CategoryAdmin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\BlogsCatAdmin.aspx.designer.cs">
-      <DependentUpon>BlogsCatAdmin.aspx</DependentUpon>
+    <Compile Include="Admin\CategoryAdmin.aspx.designer.cs">
+      <DependentUpon>CategoryAdmin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\BlogCatAdminEdit.aspx.cs">
-      <DependentUpon>BlogCatAdminEdit.aspx</DependentUpon>
+    <Compile Include="Admin\CategoryAdminEdit.aspx.cs">
+      <DependentUpon>CategoryAdminEdit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\BlogCatAdminEdit.aspx.designer.cs">
-      <DependentUpon>BlogCatAdminEdit.aspx</DependentUpon>
+    <Compile Include="Admin\CategoryAdminEdit.aspx.designer.cs">
+      <DependentUpon>CategoryAdminEdit.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\BlogsAdmin.aspx.cs">
-      <DependentUpon>BlogsAdmin.aspx</DependentUpon>
+    <Compile Include="Admin\FoodMenuAdmin.aspx.cs">
+      <DependentUpon>FoodMenuAdmin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\BlogsAdmin.aspx.designer.cs">
-      <DependentUpon>BlogsAdmin.aspx</DependentUpon>
+    <Compile Include="Admin\FoodMenuAdmin.aspx.designer.cs">
+      <DependentUpon>FoodMenuAdmin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\BlogAdminEdit.aspx.cs">
-      <DependentUpon>BlogAdminEdit.aspx</DependentUpon>
+    <Compile Include="Admin\FoodMenuAdminEdit.aspx.cs">
+      <DependentUpon>FoodMenuAdminEdit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\BlogAdminEdit.aspx.designer.cs">
-      <DependentUpon>BlogAdminEdit.aspx</DependentUpon>
+    <Compile Include="Admin\FoodMenuAdminEdit.aspx.designer.cs">
+      <DependentUpon>FoodMenuAdminEdit.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\ReviewsAdmin.aspx.cs">
       <DependentUpon>ReviewsAdmin.aspx</DependentUpon>
