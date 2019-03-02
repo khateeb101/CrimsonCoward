@@ -32,30 +32,15 @@ namespace CrimsonCoward
 
             RouteTable.Routes.MapPageRoute("home", "", "~/CCHome.aspx");
             RouteTable.Routes.MapPageRoute("about", "AboutUs", "~/aboutUs.aspx");
-            RouteTable.Routes.MapPageRoute("PostProperty", "PostProperty", "~/Postproperty.aspx");
-            RouteTable.Routes.MapPageRoute("PostRequest", "PostRequest", "~/PostRequest.aspx");
-            RouteTable.Routes.MapPageRoute("asset management", "AssetManagement", "~/asset-management.aspx");
             RouteTable.Routes.MapPageRoute("news", "News", "~/news.aspx");
             RouteTable.Routes.MapPageRoute("Blog", "Blog", "~/Blog.aspx");
             RouteTable.Routes.MapPageRoute("news details", "News/{title}/{ID}", "~/news-details.aspx");
             RouteTable.Routes.MapPageRoute("contact", "ContactUs", "~/contactUs.aspx");
             RouteTable.Routes.MapPageRoute("Intrested", "ContactUs/{Prl}", "~/contactUs.aspx");
             RouteTable.Routes.MapPageRoute("careers", "Careers", "~/careers.aspx");
-            RouteTable.Routes.MapPageRoute("projects listing", "OurProjects", "~/properties.aspx");
             RouteTable.Routes.MapPageRoute("login", "login", "~/login.aspx");
-            RouteTable.Routes.MapPageRoute("admin", "", "~/admin/.Newsadmin.aspx");
-
-            RouteTable.Routes.MapPageRoute("OurProperties12", "OurProperties/{For}/{Type}/{MinPrice}/{MaxPrice}/{MinSize}/{MaxSize}/{Region}/{Keyword}", "~/properties.aspx");
-            RouteTable.Routes.MapPageRoute("OurProperties11", "OurProperties/{For}/{Type}/{MinPrice}/{MaxPrice}/{MinSize}/{MaxSize}/{Region}", "~/properties.aspx");
-            RouteTable.Routes.MapPageRoute("OurProperties10","OurProperties/{For}/{Type}/{MinPrice}/{MaxPrice}/{MinSize}/{MaxSize}", "~/properties.aspx");
-            RouteTable.Routes.MapPageRoute("OurProperties9" ,"OurProperties/{For}/{Type}/{MinPrice}/{MaxPrice}/{MinSize}", "~/properties.aspx");
-            RouteTable.Routes.MapPageRoute("OurProperties"  ,"OurProperties/{For}/{Type}/{MinPrice}/{MaxPrice}", "~/properties.aspx");
-            RouteTable.Routes.MapPageRoute("OurProperties1" ,"OurProperties/{For}/{Type}/{MinPrice}", "~/properties.aspx");
-            RouteTable.Routes.MapPageRoute("OurProperties5" ,"OurProperties/{For}/{Type}", "~/properties.aspx");
-            RouteTable.Routes.MapPageRoute("OurProperties6" ,"OurProperties/{For}", "~/properties.aspx");
-            RouteTable.Routes.MapPageRoute("OurProperties7" ,"OurProperties-Prl/{Prl}", "~/properties.aspx");
-            RouteTable.Routes.MapPageRoute("OurProperties8" ,"OurProperties", "~/properties.aspx");
-            RouteTable.Routes.MapPageRoute("prop details", "{type}/{qadaa}/{district}/{prl}", "~/PropertyDetails.aspx");
+            //RouteTable.Routes.MapPageRoute("admin", "Admin", "~/Admin/NewsAdmin.aspx");
+            
         }
 
         void Application_End(object sender, EventArgs e)
