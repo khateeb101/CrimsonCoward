@@ -6,50 +6,39 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="panel panel-default">
         <div class="panel-heading">
-
-        </div>
-        <div class="panel-body">
-            <h1 class="Title">Reviews List</h1>
-            <div class="row" style="margin-top:20px;">
-                <div class="col-lg-6">
-                    <div class="form-group">
-                         <asp:Button Text="Add New" ID="btnNew" CssClass="form-control" runat="server" OnClick="btnNew_Click" />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
             Reviews
         </div>
         <div class="panel-body">
-             <asp:GridView ID="ReviewsGridView" CssClass="table table-hover table-striped" runat="server" AutoGenerateColumns="False" OnRowCommand="ReviewsGridView_RowCommand" >
-        <Columns>
-            <asp:BoundField DataField="data_ID" HeaderText="data_ID" SortExpression="data_ID" Visible="False" />
-                   
-                        <asp:TemplateField>
-                <ItemTemplate>
-                       <asp:Image CssClass="col-md-3" ImageUrl='<%# ResolveUrl("~/") + "Thumbnail.aspx?ReviewsId=" + Eval("Id") + "&secImg=logo" %>'
-                                            Style="margin-right: 15px" runat="server"  />
-                   
-                </ItemTemplate>
-            </asp:TemplateField>
-            <asp:TemplateField>
-                <ItemTemplate>
-                    <asp:LinkButton ID="LinkButton1" Text="Edit" CommandName="Edit" CommandArgument='<%# Eval("Id") %>'
-                        runat="server" />
-                </ItemTemplate>
-            </asp:TemplateField>
-            <asp:TemplateField>
-                <ItemTemplate>
-                    <asp:LinkButton ID="delLinkButton1" Text="Delete" CommandName="del" CommandArgument='<%# Eval("Id") %>'
-                        runat="server" />
-                </ItemTemplate>
-            </asp:TemplateField>
-        </Columns>
-    </asp:GridView>
+            <asp:GridView ID="ReviewsGridView" CssClass="table table-hover table-striped" runat="server" AutoGenerateColumns="False" OnRowCommand="ReviewsGridView_RowCommand">
+                <Columns>
+                    <asp:BoundField DataField="data_ID" HeaderText="data_ID" SortExpression="data_ID" Visible="False" />
+                    <asp:TemplateField HeaderText="Name">
+                        <ItemTemplate>
+
+                            <asp:Label ID="reviewTitle" style="border-width:0px" Text='<%# Eval("Title") %>' runat="server" />
+
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Review">
+                        <ItemTemplate>
+
+                            <asp:Label ID="reviewText"  style="border-width:0px" Text='<%# Eval("Text") %>' runat="server" />
+
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Rating">
+                        <ItemTemplate>
+                            <asp:Label ID="reviewRating" Enabled="false" style="border-width:0px;" Text='<%# Eval("Rating") %>' runat="server" />
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField>
+                        <ItemTemplate>
+                            <asp:checkbox Checked='<%# Eval("IsActive") %>' id="isActive" runat="server" reviewid='<%# Eval("Id") %>' AutoPostBack="true"  oncheckedchanged="isActive_CheckedChanged"/>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
+            </asp:GridView>
         </div>
     </div>
-   
+
 </asp:Content>

@@ -24,9 +24,6 @@
                          <label>Active</label> 
                         <asp:CheckBox runat="server" ID="chkActive" Checked="true" CssClass="form-control" />
                     </div>
-                    <div class="form-group">
-                         <asp:Button Text="Save" CssClass="form-control" ID="btnSave" runat="server" OnClick="btnSave_Click" />
-                    </div>
                 </div>
                  <div class="col-lg-6">
                      <div class="row">

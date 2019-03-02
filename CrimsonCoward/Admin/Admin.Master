@@ -84,9 +84,6 @@
                             <a href="#"><i class="fa fa-pencil fa-fw"></i>Reviews<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="/Admin/ReviewsAdminEdit.aspx">&nbsp;&nbsp;&nbsp;<i class="fa fa-plus fa-fw"></i>Reviews Add</a>
-                                </li>
-                                <li>
                                     <a href="/Admin/ReviewsAdmin.aspx">&nbsp;&nbsp;&nbsp;<i class="fa fa-edit fa-fw"></i>Reviews Edit</a>
                                 </li>
                             </ul>
@@ -105,16 +102,16 @@
                             <!-- second-level-items -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-pencil fa-fw"></i>Blogs<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-pencil fa-fw"></i>Menu<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="/Admin/BlogsCatAdmin.aspx">&nbsp;&nbsp;&nbsp;<i class="fa fa-plus fa-fw"></i>Blog Categories</a>
+                                    <a href="/Admin/CategoryAdmin.aspx">&nbsp;&nbsp;&nbsp;<i class="fa fa-plus fa-fw"></i>Categories</a>
                                 </li>
                                 <li>
-                                    <a href="/Admin/BlogAdminEdit.aspx">&nbsp;&nbsp;&nbsp;<i class="fa fa-plus fa-fw"></i>Blogs Add</a>
+                                    <a href="/Admin/CategoryAdminEdit.aspx">&nbsp;&nbsp;&nbsp;<i class="fa fa-plus fa-fw"></i>Add Category</a>
                                 </li>
                                 <li>
-                                    <a href="/Admin/BlogsAdmin.aspx">&nbsp;&nbsp;&nbsp;<i class="fa fa-edit fa-fw"></i>Blogs Edit</a>
+                                    <a href="/Admin/FoodMenuAdmin.aspx">&nbsp;&nbsp;&nbsp;<i class="fa fa-edit fa-fw"></i>Edit item</a>
                                 </li>
                             </ul>
                             <!-- second-level-items -->

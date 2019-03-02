@@ -12,9 +12,13 @@ namespace CrimsonCoward.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(!IsPostBack)
+            {
             DAL.CrimsonCowardEntities db = new DAL.CrimsonCowardEntities();
             ReviewsGridView.DataSource = db.Reviews.ToList();
             ReviewsGridView.DataBind();
+            }
+
         }
          protected void ReviewsGridView_RowCommand(object sender, GridViewCommandEventArgs e)
         {
@@ -25,20 +29,40 @@ namespace CrimsonCoward.Admin
             else if (e.CommandName == "del")
             {
                 DAL.CrimsonCowardEntities db = new DAL.CrimsonCowardEntities();
-                int _id = int.Parse(e.CommandArgument.ToString());
-                var slider = db.Sliders.Where(x => x.Id == _id).FirstOrDefault();
-                var image = db.Images.Where(x => x.Id == slider.ImageId).FirstOrDefault();
-                db.Images.Remove(image);
-                db.Sliders.Remove(slider);
+                Guid _id = new Guid(e.CommandArgument.ToString());
+                var review = db.Reviews.Where(x => x.Id == _id).FirstOrDefault();
+                //var image = db.Images.Where(x => x.Id == review.ImageID).FirstOrDefault();
+                //db.Images.Remove(image);
+                db.Reviews.Remove(review);
                 db.SaveChanges();
                 ReviewsGridView.DataSource = db.Reviews.ToList();
                 ReviewsGridView.DataBind();
             }
         }
 
-        protected void btnNew_Click(object sender, EventArgs e)
+        protected void isActive_CheckedChanged(object sender, EventArgs e)
         {
-            Response.Redirect("~/Reviews/ReviewsAdminEdit.aspx");
+            DAL.CrimsonCowardEntities db = new DAL.CrimsonCowardEntities();
+            var check = (CheckBox)sender;
+            var checkId = check.Attributes["reviewid"];
+            
+            if (checkId != null)
+            {
+                var id = new Guid(checkId);
+                var reviews = db.Reviews.Where(x => x.Id == id).FirstOrDefault();
+                db.Reviews.Remove(reviews);
+                db.SaveChanges();
+                if (reviews.IsActive == true)
+                {
+                    reviews.IsActive = false;
+                }
+                else
+                {
+                    reviews.IsActive = true;
+                }
+                db.Reviews.Add(reviews);
+                db.SaveChanges();
+            }
         }
     }
 }

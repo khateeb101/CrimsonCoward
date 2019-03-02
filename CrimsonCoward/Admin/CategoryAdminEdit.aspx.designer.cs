@@ -10,7 +10,7 @@
 namespace CrimsonCoward.Admin {
     
     
-    public partial class BlogCatAdminEdit {
+    public partial class CategoryAdminEdit {
         
         /// <summary>
         /// Notifications control.
@@ -31,6 +31,15 @@ namespace CrimsonCoward.Admin {
         protected global::System.Web.UI.WebControls.Label lblID;
         
         /// <summary>
+        /// txtName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtName;
+        
+        /// <summary>
         /// txtTitle control.
         /// </summary>
         /// <remarks>
@@ -38,24 +47,6 @@ namespace CrimsonCoward.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTitle;
-        
-        /// <summary>
-        /// uplImage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload uplImage;
-        
-        /// <summary>
-        /// lblImage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblImage;
         
         /// <summary>
         /// btnSave control.

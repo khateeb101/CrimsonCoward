@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true"
-    CodeBehind="BlogsAdmin.aspx.cs" enableEventValidation="false" Inherits="CrimsonCoward.Admin.Blogs" %>
+    CodeBehind="CategoryAdmin.aspx.cs" enableEventValidation="false" Inherits="CrimsonCoward.Admin.CategoryAdmin" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -10,7 +10,7 @@
 
         </div>
         <div class="panel-body">
-            <h1 class="Title">Blog List</h1>
+            <h1 class="Title">Categories List</h1>
             <div class="row" style="margin-top:20px;">
                 <div class="col-lg-6">
                     <div class="form-group">
@@ -22,16 +22,17 @@
     </div>
         <div class="panel panel-default">
         <div class="panel-heading">
-            Blogs
+            Categories
         </div>
         <div class="panel-body">
-                <asp:GridView ID="BlogsGridView" DataSourceID="BlogsObjectDataSource" CssClass="table table-hover table-striped"  runat="server" AutoGenerateColumns="False"  OnRowCommand="BlogsGridView_RowCommand">
+                <asp:GridView ID="CatGridView"   CssClass="table table-hover table-striped"  runat="server" AutoGenerateColumns="False"  OnRowCommand="CatGridView_RowCommand">
         <Columns>
             <asp:BoundField DataField="data_ID" HeaderText="data_ID" SortExpression="data_ID"
                 Visible="False" />
-            <asp:BoundField DataField="title" HeaderText="Title" SortExpression="title">
+            <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="title">
             </asp:BoundField>
-            <asp:BoundField DataField="text" HeaderText="Text" SortExpression="text" Visible="False" />
+            <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="title">
+            </asp:BoundField>
             <asp:TemplateField>
                 <ItemTemplate>
                     <asp:LinkButton ID="LinkButton1" Text="Edit" CommandName="Edit" CommandArgument='<%# Eval("Id") %>'
@@ -48,6 +49,4 @@
     </asp:GridView>
         </div>
     </div>
-  
-   
-</asp:Content>
+ </asp:Content>

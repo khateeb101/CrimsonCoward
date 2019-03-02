@@ -10,7 +10,7 @@
 namespace CrimsonCoward.Admin {
     
     
-    public partial class Blogs {
+    public partial class FoodMenuAdmin {
         
         /// <summary>
         /// btnNew control.
@@ -22,12 +22,12 @@ namespace CrimsonCoward.Admin {
         protected global::System.Web.UI.WebControls.Button btnNew;
         
         /// <summary>
-        /// BlogsGridView control.
+        /// FoodGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView BlogsGridView;
+        protected global::System.Web.UI.WebControls.GridView FoodGridView;
     }
 }

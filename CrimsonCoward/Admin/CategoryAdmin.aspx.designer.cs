@@ -10,7 +10,7 @@
 namespace CrimsonCoward.Admin {
     
     
-    public partial class BlogsCatAdmin {
+    public partial class CategoryAdmin {
         
         /// <summary>
         /// btnNew control.
@@ -22,12 +22,12 @@ namespace CrimsonCoward.Admin {
         protected global::System.Web.UI.WebControls.Button btnNew;
         
         /// <summary>
-        /// BlogsCatGridView control.
+        /// CatGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView BlogsCatGridView;
+        protected global::System.Web.UI.WebControls.GridView CatGridView;
     }
 }

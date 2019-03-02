@@ -12,7 +12,7 @@ namespace CrimsonCoward.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            DAL.CrimsonCowardEntities db = new DAL.CrimsonCowardEntities();
+            CrimsonCowardEntities db = new CrimsonCowardEntities();
             SlidersGridView.DataSource = db.Sliders.ToList();
             SlidersGridView.DataBind();
         }
