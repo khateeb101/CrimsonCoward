@@ -53,6 +53,7 @@ namespace CrimsonCoward.DAL
         public virtual DbSet<Reviews> Reviews { get; set; }
         public virtual DbSet<FoodCategory> FoodCategories { get; set; }
         public virtual DbSet<FoodMenu> FoodMenus { get; set; }
+        public virtual DbSet<FullFoodMenu> FullFoodMenus { get; set; }
     
         [DbFunction("CrimsonCowardEntities", "fn_ParseCSVString")]
         public virtual IQueryable<fn_ParseCSVString_Result> fn_ParseCSVString(string iDS)

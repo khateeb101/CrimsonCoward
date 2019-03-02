@@ -12,6 +12,7 @@
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/jquery.fancybox.pack.js"></script>
     <script src="/js/jquery.fancybox-media.js"></script>
+    <script src="/js/gmap3.js"></script>
     <script src="/js/portfolio/jquery.quicksand.js"></script>
     <script src="/js/portfolio/setting.js"></script>
     <script src="/js/jquery.flexslider.js"></script>

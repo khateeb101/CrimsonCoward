@@ -344,6 +344,21 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="email" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CrimsonCoward.dbo.FullFoodMenu' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="FullFoodMenu">
+          <Key>
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="CategoryID" />
+            <PropertyRef Name="CatName" />
+          </Key>
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="Name" Type="nvarchar" MaxLength="240" Nullable="false" />
+          <Property Name="Price" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="CategoryID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CatName" Type="nvarchar" MaxLength="240" Nullable="false" />
+          <Property Name="CatDesc" Type="nvarchar" MaxLength="2500" />
+        </EntityType>
         <Association Name="FK__aspnet_Me__Appli__22401542">
           <End Role="aspnet_Applications" Type="Self.aspnet_Applications" Multiplicity="1" />
           <End Role="aspnet_Membership" Type="Self.aspnet_Membership" Multiplicity="*" />
@@ -1213,6 +1228,16 @@
           <EntitySet Name="Reviews" EntityType="Self.Reviews" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Slider" EntityType="Self.Slider" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Subscribers" EntityType="Self.Subscribers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FullFoodMenu" EntityType="Self.FullFoodMenu" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [FullFoodMenu].[Description] AS [Description], 
+    [FullFoodMenu].[Name] AS [Name], 
+    [FullFoodMenu].[Price] AS [Price], 
+    [FullFoodMenu].[CategoryID] AS [CategoryID], 
+    [FullFoodMenu].[CatName] AS [CatName], 
+    [FullFoodMenu].[CatDesc] AS [CatDesc]
+    FROM [dbo].[FullFoodMenu] AS [FullFoodMenu]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK__aspnet_Me__Appli__22401542" Association="Self.FK__aspnet_Me__Appli__22401542">
             <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
             <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
@@ -2426,6 +2451,7 @@
             <End Role="FoodCategory" EntitySet="FoodCategories" />
             <End Role="FoodMenu" EntitySet="FoodMenus" />
           </AssociationSet>
+          <EntitySet Name="FullFoodMenus" EntityType="CrimsonCowardModel.FullFoodMenu" />
         </EntityContainer>
         <ComplexType Name="aspnet_Membership_GetPassword_Result">
           <Property Type="String" Name="Column1" Nullable="true" MaxLength="128" />
@@ -2597,6 +2623,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="FullFoodMenu">
+          <Key>
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="CategoryID" />
+            <PropertyRef Name="CatName" />
+          </Key>
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="240" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="CategoryID" Type="Guid" Nullable="false" />
+          <Property Name="CatName" Type="String" Nullable="false" MaxLength="240" FixedLength="false" Unicode="true" />
+          <Property Name="CatDesc" Type="String" MaxLength="2500" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -3207,6 +3246,18 @@
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FullFoodMenus">
+            <EntityTypeMapping TypeName="CrimsonCowardModel.FullFoodMenu">
+              <MappingFragment StoreEntitySet="FullFoodMenu">
+                <ScalarProperty Name="CatDesc" ColumnName="CatDesc" />
+                <ScalarProperty Name="CatName" ColumnName="CatName" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

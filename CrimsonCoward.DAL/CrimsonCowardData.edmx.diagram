@@ -43,6 +43,7 @@
         <EntityTypeShape EntityType="CrimsonCowardModel.FoodMenu" Width="1.5" PointX="17.625" PointY="0.875" />
         <AssociationConnector Association="CrimsonCowardModel.FK_FoodCategory_FoodCategory" />
         <AssociationConnector Association="CrimsonCowardModel.FK_FoodMenu_FoodCategory" />
+        <EntityTypeShape EntityType="CrimsonCowardModel.FullFoodMenu" Width="1.5" PointX="15.375" PointY="4.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

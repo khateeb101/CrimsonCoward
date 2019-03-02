@@ -18,10 +18,14 @@ namespace CrimsonCoward
 
             List<DAL.Image> lstImages = new List<DAL.Image>();
             List<DAL.Reviews> lstReviews = new List<Reviews>();
+            List<DAL.FoodCategory> lstFoodCategory = new List<FoodCategory>();
             CrimsonCowardEntities db = new CrimsonCowardEntities();
             var sliders = db.Sliders.Where(x => x.Active).ToList();
             lstImages = (from s in db.Sliders join i in db.Images on s.ImageId equals i.Id select i).ToList();
             lstReviews = db.Reviews.ToList();
+
+
+            lstFoodCategory = db.FoodCategories.ToList();
             if (lstImages.Count > 0)
             {
                 rptBanner.DataSource = lstImages;
@@ -32,6 +36,18 @@ namespace CrimsonCoward
                 rptReviews.DataSource = lstReviews;
                 rptReviews.DataBind();
             }
+            if (lstFoodCategory.Count > 0)
+            {
+                rptMenuCat.DataSource = lstFoodCategory;
+                rptMenuCat.DataBind();
+            }
+
+        }
+        protected List<DAL.FoodMenu> GetFoodList(object dataItem)
+        {
+            DAL.FoodCategory c = dataItem as DAL.FoodCategory;
+            ICollection<DAL.FoodMenu> foodmenu = c.FoodMenus;
+            return foodmenu.ToList();
         }
         bool IsValidEmail(string email)
         {

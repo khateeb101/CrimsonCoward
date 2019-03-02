@@ -130,6 +130,9 @@
     <Compile Include="FoodMenu.cs">
       <DependentUpon>CrimsonCowardData.tt</DependentUpon>
     </Compile>
+    <Compile Include="FullFoodMenu.cs">
+      <DependentUpon>CrimsonCowardData.tt</DependentUpon>
+    </Compile>
     <Compile Include="GetBlogsByCat_Result.cs">
       <DependentUpon>CrimsonCowardData.tt</DependentUpon>
     </Compile>

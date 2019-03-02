@@ -55,6 +55,39 @@
             </div>
         </div>
     </section>
+    <section id="menu" style="position: relative;">
+        <div class=" col-lg-7 CenteredImage" >
+        <img src="assets/CC_Assets_Titles_MENU.png" alt="Alternate Text"  /> 
+             </div>
+        <div class=" col-lg-8 CenteredImage" >
+        
+            <img src="assets/MenuText.jpg" width="100%" alt="Alternate Text" style="margin-bottom:20px;" />
+            </div>
+   
+         <div class="col-lg-8 CenteredImage" style="text-align:left">
+        <asp:Repeater ID="rptMenuCat" runat="server">
+
+            <ItemTemplate>
+               
+                <div class="col-lg-6">
+                <span style="font-weight:bold;font-size:30px;color:#842522"><%# Eval("Name") %></span><br />
+                <span  style="font-size:smaller; vertical-align: top; "><%# Eval("Description") %></span><br /><br />
+
+                <asp:Repeater ID="rptMenuFood" DataSource="<%# GetFoodList(Container.DataItem) %>" runat="server">
+                    <ItemTemplate>
+                        
+                       <span style="font-weight:bold;font-size:20px;"><%# Eval("Name")%></span> <br />
+                           <span style="font-size:smaller; vertical-align: top; "><%# Eval("Description")%></span>
+                       
+                        <span ><%# Eval("Price") %></span><br />
+                               
+                    </ItemTemplate>
+                </asp:Repeater>
+                    <img src="assets/Dots.jpg" width="70%" alt="Alternate Text" />
+                    </div>
+            </ItemTemplate>
+        </asp:Repeater></div>
+    </section>
     <section id="banner" style="position: relative;">
         <div id="banner1" class="col-lg-12 article" style="height: 335px;">
             <img src="assets/CC_Assets_Titles_Follow-US.png" alt="Follow us" style="width: 100%" />
@@ -89,7 +122,7 @@
     </section>
 
     <section id="reviews" style="position: relative;">
-        <div id="reviews1" class="col-lg-12 article" style="min-height: 150px; margin-top:25px;">
+       <div id="reviews1" class="col-lg-12" style="min-height: 150px; margin-top:5%; margin-bottom:5%;">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -126,11 +159,12 @@
         </div>
     </section>
     <section id="map" style="position: relative;">
-        <div id="map1" class="col-lg-12 article" style="padding: 0px; height: 300px">
+        <div id="map1" class="col-lg-12 " style="padding: 0px; height: 300px">
             <div class="col-md-12 newsbox" style="padding-left: 0px !important; padding-right: 0px !important; background-color: darkgray">
-                <iframe width="100%" height="300px"
+               <%-- <iframe width="100%" height="300px"
                     frameborder="0" style="border: 0"
-                    src="https://www.google.com/maps/embed/v1/place?key=*********************&q=CrimsonCoward" allowfullscreen></iframe>
+                    src="https://www.google.com/maps/embed/v1/place?key=*********************&q=CrimsonCoward" allowfullscreen></iframe>--%>
+                <div class="mapouter"><div class="gmap_canvas"><iframe width="100%" height="300px" id="gmap_canvas" src="https://maps.google.com/maps?q=Downey&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.pureblack.de"></a></div><style>.mapouter{text-align:right;height:300px;width:100%;}.gmap_canvas {overflow:hidden;background:none!important;height:300px;width:100%;}</style></div>
             </div>
         </div>
     </section>
