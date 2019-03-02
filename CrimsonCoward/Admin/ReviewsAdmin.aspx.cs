@@ -12,15 +12,15 @@ namespace CrimsonCoward.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            if (!IsPostBack)
             {
-            DAL.CrimsonCowardEntities db = new DAL.CrimsonCowardEntities();
-            ReviewsGridView.DataSource = db.Reviews.ToList();
-            ReviewsGridView.DataBind();
+                DAL.CrimsonCowardEntities db = new DAL.CrimsonCowardEntities();
+                ReviewsGridView.DataSource = db.Reviews.ToList();
+                ReviewsGridView.DataBind();
             }
 
         }
-         protected void ReviewsGridView_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void ReviewsGridView_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             if (e.CommandName == "Edit")
             {
@@ -45,7 +45,7 @@ namespace CrimsonCoward.Admin
             DAL.CrimsonCowardEntities db = new DAL.CrimsonCowardEntities();
             var check = (CheckBox)sender;
             var checkId = check.Attributes["reviewid"];
-            
+
             if (checkId != null)
             {
                 var id = new Guid(checkId);
