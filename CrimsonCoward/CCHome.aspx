@@ -61,9 +61,72 @@
         </div>
     </section>
     <section id="ReviewsSection" style="position: relative;">
+
         <div id="Reviews" class="col-lg-8 CenteredImage" style="height: 335px;">
-           <div id="ReviewsBox" style="height: 250px;box-shadow: 5px 10px 30px 10px #c7c6c6;border-radius: 20px;margin-left: auto;margin-right: auto;background-color:#f5f5f594;">
+           <div id="ReviewsBox" style="min-height: 250px;box-shadow: 5px 10px 30px 10px #c7c6c6;border-radius: 20px;margin-left: auto;margin-right: auto;background-color:#f5f5f594;">
+               <br />
+                           <h2 style="display:inline; color: #842522;">YOUR OPINION</h2><h2 style="display:inline; color: #E9B244;"> MATTERS THE MOST</h2>
+               <br />
+                                          <h4 style="display:inline; color: #333;">Our customers recommend us with a rating of </h4><h4 style="display:inline; color: #E9B244;"> 4.8/5</h4><h4 style="display:inline; color: #333;"> ... And they speak best!</h4>
+               <br />
+               <br />
+               <asp:TextBox placeholder="Your name" runat="server" ID="txtReviewTitle" CssClass="reviewcss" />
+               <asp:TextBox placeholder="Type here" runat="server" ID="txtReview" CssClass="reviewcss" />
+               <asp:HiddenField id="hdnRating" ClientIDMode="Static" runat="server" />
+               <br />
+               <br />
+<div class="rating"></div>
+               <br />
+                        <asp:UpdatePanel ID="up2" runat="server">
+    <ContentTemplate>
+               <asp:Label id="lblReview" style="display:block;text-align:center;font-weight:bold;" runat="server" />
+               <asp:Button Text="Send" style="margin:10px; background-color:#842522; width:15%; font-weight:bold; border-radius:3px 4px;border-style:none; color:white" id="btnReview" runat="server" onclick="btnReview_Click"/>
+                 </ContentTemplate>
+        </asp:UpdatePanel>
            </div>
+        </div>
+      
+    </section>
+
+    <section id="reviews" style="position: relative;">
+        <div id="reviews1" class="col-lg-12 article" style="height: 335px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="testimonial-slider" class="owl-carousel">
+                            <div class="testimonial">
+                                <div class="pic">
+                                    <img src="images/img-1.jpg" alt="">
+                                </div>
+                                <p class="description">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tempor finibus risus. Vivamus quis aliquet nibh. Nunc vitae felis nunc. Nam scelerisque maximus tempor. Proin sed euismod tellus. Nunc sodales, quam et porttitor accumsan, lectus dolor laoreet dolor, a scelerisque.
+                                </p>
+                                <h3 class="testimonial-title">Williamson - Web Developer</h3>
+                            </div>
+ 
+                            <div class="testimonial">
+                                <div class="pic">
+                                    <img src="images/img-2.jpg" alt="">
+                                </div>
+                                <p class="description">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tempor finibus risus. Vivamus quis aliquet nibh. Nunc vitae felis nunc. Nam scelerisque maximus tempor. Proin sed euismod tellus. Nunc sodales, quam et porttitor accumsan, lectus dolor laoreet dolor, a scelerisque.
+                                </p>
+                                <h3 class="testimonial-title">kristiana - Web Designer</h3>
+                            </div>
+ 
+                            <div class="testimonial">
+                                <div class="pic">
+                                    <img src="images/img-3.jpg" alt="">
+                                </div>
+                                <p class="description">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tempor finibus risus. Vivamus quis aliquet nibh. Nunc vitae felis nunc. Nam scelerisque maximus tempor. Proin sed euismod tellus. Nunc sodales, quam et porttitor accumsan, lectus dolor laoreet dolor, a scelerisque.
+                                </p>
+                                <h3 class="testimonial-title">Steve Thomas - Web Developer</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <section id="map" style="position: relative;">
@@ -108,7 +171,7 @@
                     <br />
                     Downey CA 90241</h5><br />
 
-                                <div >
+                                <div>
                                 <a style="color:white; font-weight:bold" href="javascript:$('html, body').animate({ scrollTop: 0 }, 700);">HOME</a>&nbsp-&nbsp
                                 <a style="color:white; font-weight:bold" href="javascript:$('html, body').animate({ scrollTop: $('#story').position().top},700);">OUR STORY</a>&nbsp-&nbsp
                                 <a style="color:white; font-weight:bold" href="javascript:$('html, body').animate({ scrollTop: $(document).height()},700);"">CONTACT US</a>
@@ -127,7 +190,7 @@
                                  
                                 
                             </div>
-                            <div class="col-lg-pull-1 col-lg-4" style="text-align:right">
+                            <div class="col-lg-pull-1 col-lg-4  col-sm-12 col-sm-pull-0" style="text-align:right">
                                 <img  src="assets/footer_logo.png" />
                                 <h5 style="color:white">Copyright © 2019 - CRIMSON COWARD - All Rights Reserved</h5>
                             </div>

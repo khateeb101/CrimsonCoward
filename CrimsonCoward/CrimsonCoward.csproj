@@ -165,13 +165,13 @@
     <Content Include="img\share.png" />
     <Content Include="img\shutterstock_261828422.png" />
     <Content Include="img\youtube.png" />
+    <Content Include="js\jquery.star.rating.js" />
     <Content Include="js\jquery.sumoselect.js" />
     <Content Include="BlogDetails.aspx" />
     <Content Include="js\typeahead.js" />
     <Content Include="NewsEvents.aspx" />
     <Content Include="NewsDetails.aspx" />
     <Content Include="Blog.aspx" />
-    <Content Include="HomeTips.aspx" />
     <Content Include="img\bathrooms.png" />
     <Content Include="img\bedrooms.png" />
     <Content Include="img\imgLoading.gif" />
@@ -184,10 +184,6 @@
     <Content Include="js\Site.js" />
     <Content Include="js\social-share-kit.js" />
     <Content Include="login.aspx" />
-    <Content Include="PostProperty.aspx" />
-    <Content Include="PostRequest.aspx" />
-    <Content Include="Properties.aspx" />
-    <Content Include="PropertyDetails.aspx" />
     <Content Include="SendSms.aspx" />
     <Content Include="UcSearch.ascx" />
     <Content Include="Web.Debug.config">
@@ -310,9 +306,7 @@
     <Content Include="js\validate.js" />
     <Content Include="Thumbnail.aspx" />
     <Content Include="UserControls\latest-properties.ascx" />
-    <Content Include="UserControls\quick-search.ascx" />
     <Content Include="UserControls\real-estate-news.ascx" />
-    <Content Include="UserControls\rightsection.ascx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -507,13 +501,6 @@
     <Compile Include="Blog.aspx.designer.cs">
       <DependentUpon>Blog.aspx</DependentUpon>
     </Compile>
-    <Compile Include="HomeTips.aspx.cs">
-      <DependentUpon>HomeTips.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="HomeTips.aspx.designer.cs">
-      <DependentUpon>HomeTips.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ImageStreamer.aspx.cs">
       <DependentUpon>ImageStreamer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -528,35 +515,7 @@
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PostProperty.aspx.cs">
-      <DependentUpon>PostProperty.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PostProperty.aspx.designer.cs">
-      <DependentUpon>PostProperty.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="PostRequest.aspx.cs">
-      <DependentUpon>PostRequest.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PostRequest.aspx.designer.cs">
-      <DependentUpon>PostRequest.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties.aspx.cs">
-      <DependentUpon>Properties.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Properties.aspx.designer.cs">
-      <DependentUpon>Properties.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PropertyDetails.aspx.cs">
-      <DependentUpon>PropertyDetails.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PropertyDetails.aspx.designer.cs">
-      <DependentUpon>PropertyDetails.aspx</DependentUpon>
-    </Compile>
     <Compile Include="SendSms.aspx.cs">
       <DependentUpon>SendSms.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -582,16 +541,8 @@
       <DependentUpon>latest-properties.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UserControls\quick-search.ascx.cs">
-      <DependentUpon>quick-search.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="UserControls\real-estate-news.ascx.cs">
       <DependentUpon>real-estate-news.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UserControls\rightsection.ascx.cs">
-      <DependentUpon>rightsection.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
   </ItemGroup>

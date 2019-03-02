@@ -2159,3 +2159,102 @@ padding-top: 0;
 
 
 }
+
+/*Owl testimonials slider*/
+.testimonial {
+    padding: 0 15px;
+    text-align: center;
+}
+
+    .testimonial .pic {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-bottom: 25px;
+        overflow: hidden;
+    }
+
+        .testimonial .pic img {
+            width: 100%;
+            height: auto;
+        }
+
+    .testimonial .description {
+        padding: 0 15px;
+        font-size: 13px;
+        color: #808080;
+        line-height: 26px;
+    }
+
+    .testimonial .testimonial-title {
+        font-size: 14px;
+        letter-spacing: 3px;
+        color: #000;
+        text-transform: uppercase;
+        position: relative;
+    }
+
+        .testimonial .testimonial-title:after {
+            content: "\f10d";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            display: inline-block;
+            width: 100%;
+            font-size: 40px;
+            color: #54478a;
+            margin-top: 30px;
+        }
+
+.owl-theme .owl-controls .owl-page span {
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 20px;
+    background: #f3904d;
+    margin: 5px 7px;
+    opacity: 0.5;
+}
+
+/*Star rating*/
+
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: 
+    url(https://fonts.gstatic.com/s/materialicons/v7/2fcrYFNaTjcS6g4U3t-Y5UEw0lE80llgEseQY3FEmqw.woff2) format('woff2'), 
+     url(https://fonts.gstatic.com/s/materialicons/v7/2fcrYFNaTjcS6g4U3t-Y5RV6cRhDpPC5P4GCEJpqGoc.woff) format('woff');
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    word-wrap: normal;
+    -moz-font-feature-settings: 'liga';
+    -moz-osx-font-smoothing: grayscale;
+    cursor: pointer;
+}
+    .selected {
+        color: #842522 !important;
+        cursor: pointer;
+    }
+ir {
+    cursor: pointer;
+}
+
+
+/*review text style*/
+.reviewcss {
+    outline: none;
+    border-width: 0px;
+    border-bottom-width: thin;
+    width: 90%;
+    background-color: rgba(249,249,249,1);
+}
