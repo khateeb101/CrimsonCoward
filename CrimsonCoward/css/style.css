@@ -2195,7 +2195,7 @@ padding-top: 0;
         position: relative;
     }
 
-        .testimonial .testimonial-title:after {
+        /*.testimonial .testimonial-title:after {
             content: "\f10d";
             font-family: "Font Awesome 5 Free";
             font-weight: 900;
@@ -2204,7 +2204,7 @@ padding-top: 0;
             font-size: 40px;
             color: #54478a;
             margin-top: 30px;
-        }
+        }*/
 
 .owl-theme .owl-controls .owl-page span {
     display: block;
@@ -2241,6 +2241,10 @@ padding-top: 0;
     -moz-osx-font-smoothing: grayscale;
     cursor: pointer;
 }
+    .material-icons:hover {
+        background-color: unset;
+        color: unset;
+    }
     .selected {
         color: #842522 !important;
         cursor: pointer;

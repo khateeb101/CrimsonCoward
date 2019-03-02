@@ -89,40 +89,36 @@
     </section>
 
     <section id="reviews" style="position: relative;">
-        <div id="reviews1" class="col-lg-12 article" style="height: 335px;">
+        <div id="reviews1" class="col-lg-12 article" style="min-height: 150px; margin-top:25px;">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
                         <div id="testimonial-slider" class="owl-carousel">
-                            <div class="testimonial">
-                                <div class="pic">
-                                    <img src="images/img-1.jpg" alt="">
-                                </div>
+                            <asp:Repeater runat="server" ID="rptReviews">
+                                <ItemTemplate>
+                                       <div class="testimonial">
                                 <p class="description">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tempor finibus risus. Vivamus quis aliquet nibh. Nunc vitae felis nunc. Nam scelerisque maximus tempor. Proin sed euismod tellus. Nunc sodales, quam et porttitor accumsan, lectus dolor laoreet dolor, a scelerisque.
+                                    <%# Eval("Text") %>
                                 </p>
-                                <h3 class="testimonial-title">Williamson - Web Developer</h3>
+                                <h3 class="testimonial-title"><%# Eval("Title") %></h3>
+                                           <div id="rating_<%# Eval("Id") %>"></div>
+                                           <script>
+                                               $('#rating_<%# Eval("Id") %>').addRating({
+                                                   max: 5,
+                                                   half: true,
+                                                   fieldName: 'rating_<%# Eval("Id") %>',
+                                                   fieldId: 'rating_<%# Eval("Id") %>',
+                                                   icon: 'star',
+                                                   selectedRatings: <%# Eval("Rating") %>,
+                                                   disabled: true
+                                               });
+
+                                               $("#rating_<%# Eval("Id") %>").find('.stars').unbind(); $("#rating_<%# Eval("Id") %>").find('.stars .star').unbind();
+                                               $('owl-item').unbind();
+                                           </script>
                             </div>
- 
-                            <div class="testimonial">
-                                <div class="pic">
-                                    <img src="images/img-2.jpg" alt="">
-                                </div>
-                                <p class="description">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tempor finibus risus. Vivamus quis aliquet nibh. Nunc vitae felis nunc. Nam scelerisque maximus tempor. Proin sed euismod tellus. Nunc sodales, quam et porttitor accumsan, lectus dolor laoreet dolor, a scelerisque.
-                                </p>
-                                <h3 class="testimonial-title">kristiana - Web Designer</h3>
-                            </div>
- 
-                            <div class="testimonial">
-                                <div class="pic">
-                                    <img src="images/img-3.jpg" alt="">
-                                </div>
-                                <p class="description">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tempor finibus risus. Vivamus quis aliquet nibh. Nunc vitae felis nunc. Nam scelerisque maximus tempor. Proin sed euismod tellus. Nunc sodales, quam et porttitor accumsan, lectus dolor laoreet dolor, a scelerisque.
-                                </p>
-                                <h3 class="testimonial-title">Steve Thomas - Web Developer</h3>
-                            </div>
+                                </ItemTemplate>
+                            </asp:Repeater>
                         </div>
                     </div>
                 </div>

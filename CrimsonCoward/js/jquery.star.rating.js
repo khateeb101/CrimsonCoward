@@ -17,7 +17,8 @@
             fieldName: 'rating',
             fieldId: 'rating',
             icon: 'star',
-            selectedRatings: 0
+            selectedRatings: 0,
+            disabled: false
         }, options);
         this.settings = settings;
 
@@ -62,6 +63,7 @@
                 $(this).html(icon);
             })
         }
+
     }
 
 }(jQuery));

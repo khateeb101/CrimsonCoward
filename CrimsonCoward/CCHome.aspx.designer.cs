@@ -22,15 +22,6 @@ namespace CrimsonCoward {
         protected global::System.Web.UI.WebControls.Repeater rptBanner;
         
         /// <summary>
-        /// up2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel up2;
-        
-        /// <summary>
         /// txtReviewTitle control.
         /// </summary>
         /// <remarks>
@@ -58,6 +49,15 @@ namespace CrimsonCoward {
         protected global::System.Web.UI.WebControls.HiddenField hdnRating;
         
         /// <summary>
+        /// up2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel up2;
+        
+        /// <summary>
         /// lblReview control.
         /// </summary>
         /// <remarks>
@@ -74,6 +74,15 @@ namespace CrimsonCoward {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnReview;
+        
+        /// <summary>
+        /// rptReviews control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptReviews;
         
         /// <summary>
         /// up1 control.

@@ -17,16 +17,21 @@ namespace CrimsonCoward
             ViewState["LatestNb"] = 3;
 
             List<DAL.Image> lstImages = new List<DAL.Image>();
+            List<DAL.Reviews> lstReviews = new List<Reviews>();
             CrimsonCowardEntities db = new CrimsonCowardEntities();
             var sliders = db.Sliders.Where(x => x.Active).ToList();
             lstImages = (from s in db.Sliders join i in db.Images on s.ImageId equals i.Id select i).ToList();
-            
+            lstReviews = db.Reviews.ToList();
             if (lstImages.Count > 0)
             {
                 rptBanner.DataSource = lstImages;
                 rptBanner.DataBind();
             }
-              
+            if (lstReviews.Count > 0)
+            {
+                rptReviews.DataSource = lstReviews;
+                rptReviews.DataBind();
+            }
         }
         bool IsValidEmail(string email)
         {
