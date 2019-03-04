@@ -56,7 +56,7 @@ namespace CrimsonCoward.Admin
             data.Id = _id;
             data.Name = txtTitle.Text;
             data.Description = txtDescription.Text;
-            data.Price = decimal.Parse(txtPrice.Text??"0");
+            data.Price = string.IsNullOrEmpty(txtPrice.Text)? 0: decimal.Parse(txtPrice.Text);
             data.CategoryID = Guid.Parse(drpFoodCats.SelectedValue);           
         
           

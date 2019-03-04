@@ -2262,3 +2262,33 @@ ir {
     width: 90%;
     background-color: rgba(249,249,249,1);
 }
+
+/*MenuTable*/
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+td {
+    /*border-bottom: 1px solid black;*/
+    vertical-align: top;
+    /*padding-top: 10px;*/
+}
+td.price {
+    text-align:right;
+    /*top:1px;
+    padding-left:15px;*/
+}
+td.line {
+    width: 100%;
+    background: center;
+    background-image: url(../assets/MenuLine.jpg);
+    background-repeat: no-repeat;
+    background-position-y: 15px;
+}
+ 
+
+td > span.product{
+    background-color: white;
+    position: relative;
+    padding-bottom:10px;
+}

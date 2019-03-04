@@ -142,6 +142,7 @@
     <Content Include="assets\HeaderItem.png" />
     <Content Include="assets\Instagram.png" />
     <Content Include="assets\logo.png" />
+    <Content Include="assets\MenuLine.jpg" />
     <Content Include="assets\MenuText.jpg" />
     <Content Include="assets\OurStory.jpg" />
     <Content Include="assets\Snap.png" />
@@ -555,7 +556,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\forms.less" />
@@ -591,6 +591,9 @@
       <Project>{6af6d702-2544-43d5-9f24-ee094f0c2e92}</Project>
       <Name>CrimsonCoward.DAL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\Profile1.pubxml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

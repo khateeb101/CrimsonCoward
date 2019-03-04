@@ -201,7 +201,7 @@
           <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Description" Type="nvarchar" MaxLength="500" />
           <Property Name="Name" Type="nvarchar" MaxLength="240" Nullable="false" />
-          <Property Name="Price" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="Price" Type="decimal" Precision="8" Scale="2" Nullable="false" />
           <Property Name="CategoryID" Type="uniqueidentifier" Nullable="false" />
         </EntityType>
         <EntityType Name="HomeTips">
@@ -2595,7 +2595,7 @@ warning 6002: The table/view 'CrimsonCoward.dbo.FullFoodMenu' does not have a pr
           <Property Name="Id" Type="Guid" Nullable="false" />
           <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="240" FixedLength="false" Unicode="true" />
-          <Property Name="Price" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="Price" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
           <Property Name="CategoryID" Type="Guid" Nullable="false" />
           <NavigationProperty Name="FoodCategory" Relationship="CrimsonCowardModel.FK_FoodMenu_FoodCategory" FromRole="FoodMenu" ToRole="FoodCategory" />
         </EntityType>

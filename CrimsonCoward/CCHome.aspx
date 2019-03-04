@@ -20,7 +20,7 @@
                 <asp:Repeater runat="server" ID="rptBanner">
                     <ItemTemplate>
                         <li>
-                            <asp:Image runat="server" ImageUrl='<%# ResolveUrl("~/") + "Thumbnail.aspx?id=" + Eval("Id") + "&secImg=HomeTips&r="+Guid.NewGuid()  %>' />
+                            <asp:Image runat="server" style="max-height:510px" ImageUrl='<%# ResolveUrl("~/") + "Thumbnail.aspx?id=" + Eval("Id") + "&secImg=HomeTips&r="+Guid.NewGuid()  %>' />
                         </li>
                     </ItemTemplate>
                 </asp:Repeater>
@@ -70,16 +70,51 @@
             <ItemTemplate>
                
                 <div class="col-lg-6">
-                <span style="font-weight:bold;font-size:30px;color:#842522"><%# Eval("Name") %></span><br />
-                <span  style="font-size:smaller; vertical-align: top; "><%# Eval("Description") %></span><br /><br />
+                    <table style="margin-bottom:15px;">
+                        <tr>
+                            <td  class="product">
+                                 <span style="font-weight:bold;font-size:30px;color:#842522"><%# Eval("Name") %></span>
+                            </td>
+                        </tr>
+                        <tr class="description">
+                            <td >
+                                <span  style="float:left; font-size: small;vertical-align: top;line-height: 11px;"><%# Eval("Description") %></span>
+                            </td>
+                        </tr>
+                    </table>
+             <%--   <span style="font-weight:bold;font-size:30px;color:#842522"><%# Eval("Name") %></span><br />
+                <span  style="font-size: small;vertical-align: top;line-height: 27px; "><%# Eval("Description") %></span><br /> --%>
+
+
+
 
                 <asp:Repeater ID="rptMenuFood" DataSource="<%# GetFoodList(Container.DataItem) %>" runat="server">
                     <ItemTemplate>
-                        
-                       <span style="font-weight:bold;font-size:20px;"><%# Eval("Name")%></span> <br />
-                           <span style="font-size:smaller; vertical-align: top; "><%# Eval("Description")%></span>
-                       
-                        <span ><%# Eval("Price") %></span><br />
+                         <table style="margin-bottom:15px;">
+                            <tr>
+                                <td class="product">   <span  style="float:left; font-weight:bold;font-size:16px;"><%# Eval("Name")%></span></td>
+                                <td class="line" <%# Eval("Price").ToString() == "0.00"?"hidden":"" %>>&nbsp;</td>
+                                <td class="price"<%# Eval("Price").ToString() == "0.00"?"hidden":"" %>>
+                                    <span style="float:right;" ><%# Eval("Price") %></span> 
+                                </td>
+                               <td class="product"  <%# Eval("Price").ToString() != "0.00"?"hidden":"" %>>  
+                                    <span  style="float:left; font-weight:bold;font-size:20px;"><%# Eval("Description")%></span>
+                                </td>
+                            </tr>
+                              
+                            <tr class="description" <%# Eval("Price").ToString() == "0.00"?"hidden":"" %>>
+                               <td> <span style="float:left; font-size: small;vertical-align: top;line-height: 11px;"><%# Eval("Description")%></span> </td>
+                            </tr>
+                        </table>
+                    <%--    <div style="text-align:left;"> 
+                       <span style="float:left; font-weight:bold;font-size:20px;"><%# Eval("Name")%></span>
+                           <div style="float:unset; background-image:url(../assets/MenuLine.jpg)"></div>
+                        <span style="float:right;" ><%# Eval("Price") %></span> 
+                          </div>
+                        <br />
+                        <span style="float:left; font-size: small;vertical-align: top;line-height: 11px;"><%# Eval("Description")%></span><br />
+                       --%>
+                      
                                
                     </ItemTemplate>
                 </asp:Repeater>

@@ -17,7 +17,7 @@ namespace CrimsonCoward.DAL
         public System.Guid Id { get; set; }
         public string Description { get; set; }
         public string Name { get; set; }
-        public Nullable<decimal> Price { get; set; }
+        public decimal Price { get; set; }
         public System.Guid CategoryID { get; set; }
     
         public virtual FoodCategory FoodCategory { get; set; }
