@@ -12,7 +12,7 @@ namespace CrimsonCoward
         protected void Page_Load(object sender, EventArgs e)
         {
             if (User.Identity.IsAuthenticated)
-                Response.Redirect(ResolveUrl("~/") + "Admin/NewsAdmin.aspx");
+                Response.Redirect(ResolveUrl("~/") + "Admin/SliderAdmin.aspx");
         }
     }
 }

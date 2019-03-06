@@ -30,7 +30,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="/">
-                        <img src="assets/assets/logo.png" alt="" />
+                        <img src="assets/img/logo.png" alt="" />
                     </a>
                 </div>
                 <!-- end navbar-header -->
@@ -90,52 +90,16 @@
                             <!-- second-level-items -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-pencil fa-fw"></i>News<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="/Admin/NewsAdminEdit.aspx">&nbsp;&nbsp;&nbsp;<i class="fa fa-plus fa-fw"></i>News Add</a>
-                                </li>
-                                <li>
-                                    <a href="/Admin/NewsAdmin.aspx">&nbsp;&nbsp;&nbsp;<i class="fa fa-edit fa-fw"></i>News Edit</a>
-                                </li>
-                            </ul>
-                            <!-- second-level-items -->
-                        </li>
-                        <li>
                             <a href="#"><i class="fa fa-pencil fa-fw"></i>Menu<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="/Admin/CategoryAdmin.aspx">&nbsp;&nbsp;&nbsp;<i class="fa fa-plus fa-fw"></i>Categories</a>
                                 </li>
                                 <li>
-                                    <a href="/Admin/CategoryAdminEdit.aspx">&nbsp;&nbsp;&nbsp;<i class="fa fa-plus fa-fw"></i>Add Category</a>
+                                    <a href="/Admin/CategoryAdminEdit.aspx">&nbsp;&nbsp;&nbsp;<i class="fa fa-plus fa-fw"></i>Add category</a>
                                 </li>
                                 <li>
-                                    <a href="/Admin/FoodMenuAdmin.aspx">&nbsp;&nbsp;&nbsp;<i class="fa fa-edit fa-fw"></i>Edit item</a>
-                                </li>
-                            </ul>
-                            <!-- second-level-items -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-home fa-fw"></i>Home Tips<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="/Admin/HomeTipsEdit.aspx">&nbsp;&nbsp;&nbsp;<i class="fa fa-plus fa-fw"></i>Home Tips Add</a>
-                                </li>
-                                <li>
-                                    <a href="/Admin/HomeTipsAdmin.aspx">&nbsp;&nbsp;&nbsp;<i class="fa fa-edit fa-fw"></i>Home Tips List</a>
-                                </li>
-                            </ul>
-                            <!-- second-level-items -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-coffee fa-fw"></i>Partners<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="/Admin/PartnershipsAdminEdit.aspx">&nbsp;&nbsp;&nbsp;<i class="fa fa-plus fa-fw"></i>Partners Add</a>
-                                </li>
-                                <li>
-                                    <a href="/Admin/PartnershipsAdmin.aspx">&nbsp;&nbsp;&nbsp;<i class="fa fa-edit fa-fw"></i>Partners List</a>
+                                    <a href="/Admin/FoodMenuAdmin.aspx">&nbsp;&nbsp;&nbsp;<i class="fa fa-edit fa-fw"></i>Add food item</a>
                                 </li>
                             </ul>
                             <!-- second-level-items -->
@@ -148,7 +112,6 @@
             <!-- end navbar side -->
             <!--  page-wrapper -->
             <div id="page-wrapper">
-                <form></form>
                 <div class="row">
                     <!-- Page Header -->
                     <div class="col-lg-12">

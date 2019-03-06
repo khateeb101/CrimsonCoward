@@ -8,7 +8,7 @@ using CrimsonCoward.DAL;
 
 namespace CrimsonCoward
 {
-    public partial class CCHome : System.Web.UI.Page
+    public partial class Default : System.Web.UI.Page
     {
 
         public void Page_Load(object sender, EventArgs e)

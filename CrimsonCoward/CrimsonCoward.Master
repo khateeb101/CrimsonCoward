@@ -27,8 +27,8 @@
     <script src="/js/Site.js" type="text/javascript"></script>
     <!-- css -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="/js/owl-carousel/owl.carousel.css" rel="stylesheet" type="text/css"/>
-    <link href="/js/owl-carousel/owl.theme.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/owl-carousel/owl.carousel.css" rel="stylesheet" type="text/css" />
+    <link href="/js/owl-carousel/owl.theme.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico" />
     <link href="/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/css/bootstrap.min.css" rel="stylesheet" />
@@ -37,90 +37,77 @@
     <link href="/css/style.css" rel="stylesheet" />
     <link href="/css/nivo-slider.css" rel="stylesheet" type="text/css" />
     <link href="css/SocialSticky.css" rel="stylesheet" />
-    <link href="css/sumoselect.css" rel="stylesheet" type="text/css"/>
-  
-</script>
+    <link href="css/sumoselect.css" rel="stylesheet" type="text/css" />
     <style>
         .navbar .navbar-nav {
-  display: inline-block;
-  float: none;
-  vertical-align: top;
-}
-
-.navbar .navbar-collapse {
-  text-align: center;
-
-}
-.dropdown-toggle:hover + .dropdown-menu ,.dropdown-menu:hover {
-    display:block !important;
-    
-}
-#menu_OurPropertiesBuy ,#menu_OurPropertiesRent {
-    padding-bottom:0px;
-}
-
- .dropdown-menu
- {
-     padding:0px;
- }
+            display: inline-block;
+            float: none;
+            vertical-align: top;
+        }
+        .navbar .navbar-collapse {
+            text-align: center;
+        }
+        .dropdown-toggle:hover + .dropdown-menu, .dropdown-menu:hover {
+            display: block !important;
+        }
+        #menu_OurPropertiesBuy, #menu_OurPropertiesRent {
+            padding-bottom: 0px;
+        }
+        .dropdown-menu {
+            padding: 0px;
+        }
     </style>
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
     </asp:ContentPlaceHolder>
-
 </head>
-
 <body>
     <form id="MainForm" runat="server">
         <asp:ScriptManager runat="server" />
-        <div>
-            <header style="position:sticky">
-                <div class="navbar navbar-default navbar-static-top" style="background-color: white;">
-                    <div class="container">
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                            <a class="navbar-brand" href="/">
-                                <img src="/assets/logo.png" style="height: 105px; margin-top: -20px" alt="logo" /></a>
-                        </div>
+        <header style="position: sticky">
+            <div class="navbar navbar-default navbar-static-top" style="background-color: white;">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="/">
+                            <img src="/assets/logo.png" style="height: 105px; margin-top: -20px" alt="logo" /></a>
+                    </div>
+                    <div class="navbar-collapse collapse text-center">
+                        <ul class="nav navbar-nav " style="margin-top: 30px">
+                            <li class="MenuItem" id="menu_Home"><a href="javascript:$('html, body').animate({ scrollTop: 0 }, 700);">HOME</a></li>
+                            <li class="MenuItem" id="menu_Menu"><a href="javascript:$('html, body').animate({ scrollTop: $('#foodmenu').position().top},700);">MENU</a></li>
+                            <li class="MenuItem" id="menu_Story"><a href="javascript:$('html, body').animate({ scrollTop: $('#story').position().top},500);">OUR STORY</a></li>
+                            <li class="MenuItem" id="menu_ContactUs"><a href="javascript:$('html, body').animate({ scrollTop: $(document).height()},1000);">CONTACT US</a></li>
+                            <li class="MenuItem" style="border-left: solid 2px #832623; height: 44px; margin-left: 60px" id="menu_seperator"></li>
+                        </ul>
+                        <ul class="nav navbar-nav ">
+                            <li style="float: right;">
+                                <img imageheight="33px" src="~/assets/HeaderItem.png" style="float: right; margin-top: 0px; margin-bottom: 5px;" runat="server" /></li>
 
-
-                        <div class="navbar-collapse collapse text-center">
-                            <ul class="nav navbar-nav " style="margin-top:30px">
-                                <li class="MenuItem" id="menu_Home"><a href="javascript:$('html, body').animate({ scrollTop: 0 }, 700);">HOME</a></li>
-                                <li class="MenuItem" id="menu_Story"><a href="javascript:$('html, body').animate({ scrollTop: $('#story').position().top},700);">OUR STORY</a></li>
-                                <li class="MenuItem" id="menu_ContactUs"><a href="javascript:$('html, body').animate({ scrollTop: $(document).height()},700);"">CONTACT US</a></li>
-                                 <li class="MenuItem" style="border-left: solid 2px #832623;height: 44px; margin-left:60px" id="menu_seperator"></li>
-                            </ul>
-                            <ul class="nav navbar-nav ">
-                                <li style="float:right;"> <img ImageHeight="33px" src="~/assets/HeaderItem.png" style="float:right; margin-top: 0px; margin-bottom:5px;" runat="server" /></li>
-                                
-                            </ul>
-                             <ul class="nav navbar-nav ">
-                                <li class="menu_social" style="float:right;"> 
-                                    <img ImageHeight="33px" src="~/assets/Facebook.png" style="float:right; margin-top: 0px; margin-bottom:5px;" runat="server" />
-                                </li>
-                                <li class="menu_social" style="float:right;"> 
-                                    <img ImageHeight="33px" src="~/assets/Instagram.png" style="float:right; margin-top: 0px; margin-bottom:5px;" runat="server" />
-                                </li>
-                                 <li class="menu_social" style="float:right;"> 
-                                    <img ImageHeight="33px" src="~/assets/Snap.png" style="float:right; margin-top: 0px; margin-bottom:5px;" runat="server" />
-                                </li>
-                            </ul>
-                        </div>
+                        </ul>
+                        <ul class="nav navbar-nav ">
+                            <li class="menu_social" style="float: right;">
+                                <img imageheight="33px" src="~/assets/Facebook.png" style="float: right; margin-top: 0px; margin-bottom: 5px;" runat="server" />
+                            </li>
+                            <li class="menu_social" style="float: right;">
+                                <img imageheight="33px" src="~/assets/Instagram.png" style="float: right; margin-top: 0px; margin-bottom: 5px;" runat="server" />
+                            </li>
+                            <li class="menu_social" style="float: right;">
+                                <img imageheight="33px" src="~/assets/Snap.png" style="float: right; margin-top: 0px; margin-bottom: 5px;" runat="server" />
+                            </li>
+                        </ul>
                     </div>
                 </div>
-            </header>
-            <div id="wrapper">
-                <asp:ContentPlaceHolder ID="MainContent" runat="server">
-                </asp:ContentPlaceHolder>
             </div>
-
-
-            <a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
-      
+        </header>
+        <div id="wrapper">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
     </form>
     <script type="text/javascript">
         $(document).ready(function () {

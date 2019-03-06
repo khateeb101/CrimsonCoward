@@ -204,18 +204,6 @@
           <Property Name="Price" Type="decimal" Precision="8" Scale="2" Nullable="false" />
           <Property Name="CategoryID" Type="uniqueidentifier" Nullable="false" />
         </EntityType>
-        <EntityType Name="HomeTips">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="image" Type="image" />
-          <Property Name="link" Type="nvarchar(max)" />
-          <Property Name="title" Type="nvarchar(max)" />
-          <Property Name="text1" Type="nvarchar(max)" />
-          <Property Name="text2" Type="nvarchar(max)" />
-          <Property Name="dateCreated" Type="datetime" />
-        </EntityType>
         <EntityType Name="Images">
           <Key>
             <PropertyRef Name="Id" />
@@ -225,45 +213,6 @@
           <Property Name="Name" Type="nvarchar" MaxLength="50" />
           <Property Name="Desc" Type="nvarchar(max)" />
           <Property Name="Ext" Type="nchar" MaxLength="10" />
-        </EntityType>
-        <EntityType Name="News">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="link" Type="nvarchar(max)" />
-          <Property Name="title" Type="nvarchar(max)" />
-          <Property Name="description" Type="nvarchar(max)" />
-          <Property Name="date" Type="datetime" />
-          <Property Name="Subtitle" Type="nvarchar(max)" />
-          <Property Name="isInternational" Type="bit" />
-        </EntityType>
-        <EntityType Name="Partnership">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="title" Type="nvarchar(max)" />
-          <Property Name="text" Type="nvarchar(max)" />
-          <Property Name="image" Type="image" />
-          <Property Name="logo" Type="image" />
-          <Property Name="dateAdded" Type="datetime" />
-        </EntityType>
-        <EntityType Name="PropertyImage">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="Description" Type="nvarchar(max)" />
-          <Property Name="Image" Type="image" />
-          <Property Name="Extension" Type="nvarchar(max)" />
-          <Property Name="ShowAsFirstImage" Type="bit" />
-          <Property Name="PRL" Type="nvarchar(max)" />
-          <Property Name="PropertyType" Type="nvarchar(max)" />
-          <Property Name="PropertyFor" Type="nvarchar(max)" />
-          <Property Name="Qadaa" Type="nvarchar(max)" />
-          <Property Name="District" Type="nvarchar(max)" />
-          <Property Name="Size" Type="int" />
         </EntityType>
         <EntityType Name="RealEstateProperty">
           <Key>
@@ -337,7 +286,7 @@
           <Property Name="ImageId" Type="int" Nullable="false" />
           <Property Name="Active" Type="bit" Nullable="false" />
         </EntityType>
-        <EntityType Name="Subscribers">
+        <EntityType Name="Subscriber">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -345,21 +294,155 @@
           <Property Name="email" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'CrimsonCoward.dbo.FullFoodMenu' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="FullFoodMenu">
+warning 6002: The table/view 'CrimsonCoward.dbo.vw_aspnet_Applications' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_aspnet_Applications">
           <Key>
-            <PropertyRef Name="Name" />
-            <PropertyRef Name="CategoryID" />
-            <PropertyRef Name="CatName" />
+            <PropertyRef Name="ApplicationName" />
+            <PropertyRef Name="LoweredApplicationName" />
+            <PropertyRef Name="ApplicationId" />
           </Key>
-          <Property Name="Description" Type="nvarchar" MaxLength="500" />
-          <Property Name="Name" Type="nvarchar" MaxLength="240" Nullable="false" />
-          <Property Name="Price" Type="decimal" Precision="8" Scale="2" />
-          <Property Name="CategoryID" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="CatName" Type="nvarchar" MaxLength="240" Nullable="false" />
-          <Property Name="CatDesc" Type="nvarchar" MaxLength="2500" />
+          <Property Name="ApplicationName" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="LoweredApplicationName" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="256" />
         </EntityType>
-        <Association Name="FK__aspnet_Me__Appli__22401542">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CrimsonCoward.dbo.vw_aspnet_MembershipUsers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_aspnet_MembershipUsers">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="PasswordFormat" />
+            <PropertyRef Name="IsApproved" />
+            <PropertyRef Name="IsLockedOut" />
+            <PropertyRef Name="CreateDate" />
+            <PropertyRef Name="LastLoginDate" />
+            <PropertyRef Name="LastPasswordChangedDate" />
+            <PropertyRef Name="LastLockoutDate" />
+            <PropertyRef Name="FailedPasswordAttemptCount" />
+            <PropertyRef Name="FailedPasswordAttemptWindowStart" />
+            <PropertyRef Name="FailedPasswordAnswerAttemptCount" />
+            <PropertyRef Name="FailedPasswordAnswerAttemptWindowStart" />
+            <PropertyRef Name="ApplicationId" />
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="IsAnonymous" />
+            <PropertyRef Name="LastActivityDate" />
+          </Key>
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PasswordFormat" Type="int" Nullable="false" />
+          <Property Name="MobilePIN" Type="nvarchar" MaxLength="16" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="LoweredEmail" Type="nvarchar" MaxLength="256" />
+          <Property Name="PasswordQuestion" Type="nvarchar" MaxLength="256" />
+          <Property Name="PasswordAnswer" Type="nvarchar" MaxLength="128" />
+          <Property Name="IsApproved" Type="bit" Nullable="false" />
+          <Property Name="IsLockedOut" Type="bit" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="LastLoginDate" Type="datetime" Nullable="false" />
+          <Property Name="LastPasswordChangedDate" Type="datetime" Nullable="false" />
+          <Property Name="LastLockoutDate" Type="datetime" Nullable="false" />
+          <Property Name="FailedPasswordAttemptCount" Type="int" Nullable="false" />
+          <Property Name="FailedPasswordAttemptWindowStart" Type="datetime" Nullable="false" />
+          <Property Name="FailedPasswordAnswerAttemptCount" Type="int" Nullable="false" />
+          <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="datetime" Nullable="false" />
+          <Property Name="Comment" Type="ntext" />
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="MobileAlias" Type="nvarchar" MaxLength="16" />
+          <Property Name="IsAnonymous" Type="bit" Nullable="false" />
+          <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CrimsonCoward.dbo.vw_aspnet_Profiles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_aspnet_Profiles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="LastUpdatedDate" />
+          </Key>
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
+          <Property Name="DataSize" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CrimsonCoward.dbo.vw_aspnet_Roles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_aspnet_Roles">
+          <Key>
+            <PropertyRef Name="ApplicationId" />
+            <PropertyRef Name="RoleId" />
+            <PropertyRef Name="RoleName" />
+            <PropertyRef Name="LoweredRoleName" />
+          </Key>
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="LoweredRoleName" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CrimsonCoward.dbo.vw_aspnet_Users' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_aspnet_Users">
+          <Key>
+            <PropertyRef Name="ApplicationId" />
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="LoweredUserName" />
+            <PropertyRef Name="IsAnonymous" />
+            <PropertyRef Name="LastActivityDate" />
+          </Key>
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="LoweredUserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="MobileAlias" Type="nvarchar" MaxLength="16" />
+          <Property Name="IsAnonymous" Type="bit" Nullable="false" />
+          <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CrimsonCoward.dbo.vw_aspnet_UsersInRoles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_aspnet_UsersInRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CrimsonCoward.dbo.vw_aspnet_WebPartState_Paths' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_aspnet_WebPartState_Paths">
+          <Key>
+            <PropertyRef Name="ApplicationId" />
+            <PropertyRef Name="PathId" />
+            <PropertyRef Name="Path" />
+            <PropertyRef Name="LoweredPath" />
+          </Key>
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PathId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Path" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="LoweredPath" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CrimsonCoward.dbo.vw_aspnet_WebPartState_Shared' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_aspnet_WebPartState_Shared">
+          <Key>
+            <PropertyRef Name="PathId" />
+            <PropertyRef Name="LastUpdatedDate" />
+          </Key>
+          <Property Name="PathId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DataSize" Type="int" />
+          <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CrimsonCoward.dbo.vw_aspnet_WebPartState_User' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_aspnet_WebPartState_User">
+          <Key>
+            <PropertyRef Name="LastUpdatedDate" />
+          </Key>
+          <Property Name="PathId" Type="uniqueidentifier" />
+          <Property Name="UserId" Type="uniqueidentifier" />
+          <Property Name="DataSize" Type="int" />
+          <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__aspnet_Me__Appli__69C6B1F5">
           <End Role="aspnet_Applications" Type="Self.aspnet_Applications" Multiplicity="1" />
           <End Role="aspnet_Membership" Type="Self.aspnet_Membership" Multiplicity="*" />
           <ReferentialConstraint>
@@ -371,7 +454,7 @@ warning 6002: The table/view 'CrimsonCoward.dbo.FullFoodMenu' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Me__UserI__2334397B">
+        <Association Name="FK__aspnet_Me__UserI__6ABAD62E">
           <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="1" />
           <End Role="aspnet_Membership" Type="Self.aspnet_Membership" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -383,7 +466,7 @@ warning 6002: The table/view 'CrimsonCoward.dbo.FullFoodMenu' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Pa__Appli__53D770D6">
+        <Association Name="FK__aspnet_Pa__Appli__6BAEFA67">
           <End Role="aspnet_Applications" Type="Self.aspnet_Applications" Multiplicity="1" />
           <End Role="aspnet_Paths" Type="Self.aspnet_Paths" Multiplicity="*" />
           <ReferentialConstraint>
@@ -395,7 +478,7 @@ warning 6002: The table/view 'CrimsonCoward.dbo.FullFoodMenu' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Pe__PathI__59904A2C">
+        <Association Name="FK__aspnet_Pe__PathI__6CA31EA0">
           <End Role="aspnet_Paths" Type="Self.aspnet_Paths" Multiplicity="1" />
           <End Role="aspnet_PersonalizationAllUsers" Type="Self.aspnet_PersonalizationAllUsers" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -407,7 +490,7 @@ warning 6002: The table/view 'CrimsonCoward.dbo.FullFoodMenu' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Pe__PathI__5D60DB10">
+        <Association Name="FK__aspnet_Pe__PathI__6D9742D9">
           <End Role="aspnet_Paths" Type="Self.aspnet_Paths" Multiplicity="0..1" />
           <End Role="aspnet_PersonalizationPerUser" Type="Self.aspnet_PersonalizationPerUser" Multiplicity="*" />
           <ReferentialConstraint>
@@ -419,7 +502,7 @@ warning 6002: The table/view 'CrimsonCoward.dbo.FullFoodMenu' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Pe__UserI__5E54FF49">
+        <Association Name="FK__aspnet_Pe__UserI__6E8B6712">
           <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="0..1" />
           <End Role="aspnet_PersonalizationPerUser" Type="Self.aspnet_PersonalizationPerUser" Multiplicity="*" />
           <ReferentialConstraint>
@@ -431,7 +514,7 @@ warning 6002: The table/view 'CrimsonCoward.dbo.FullFoodMenu' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Pr__UserI__373B3228">
+        <Association Name="FK__aspnet_Pr__UserI__6F7F8B4B">
           <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="1" />
           <End Role="aspnet_Profile" Type="Self.aspnet_Profile" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -443,7 +526,7 @@ warning 6002: The table/view 'CrimsonCoward.dbo.FullFoodMenu' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Ro__Appli__40C49C62">
+        <Association Name="FK__aspnet_Ro__Appli__7073AF84">
           <End Role="aspnet_Applications" Type="Self.aspnet_Applications" Multiplicity="1" />
           <End Role="aspnet_Roles" Type="Self.aspnet_Roles" Multiplicity="*" />
           <ReferentialConstraint>
@@ -455,7 +538,7 @@ warning 6002: The table/view 'CrimsonCoward.dbo.FullFoodMenu' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Us__Appli__1209AD79">
+        <Association Name="FK__aspnet_Us__Appli__3493CFA7">
           <End Role="aspnet_Applications" Type="Self.aspnet_Applications" Multiplicity="1" />
           <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="*" />
           <ReferentialConstraint>
@@ -467,7 +550,31 @@ warning 6002: The table/view 'CrimsonCoward.dbo.FullFoodMenu' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Us__RoleI__4589517F">
+        <Association Name="FK__aspnet_Us__Appli__5BE2A6F2">
+          <End Role="aspnet_Applications" Type="Self.aspnet_Applications" Multiplicity="1" />
+          <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Applications">
+              <PropertyRef Name="ApplicationId" />
+            </Principal>
+            <Dependent Role="aspnet_Users">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Us__Appli__7167D3BD">
+          <End Role="aspnet_Applications" Type="Self.aspnet_Applications" Multiplicity="1" />
+          <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Applications">
+              <PropertyRef Name="ApplicationId" />
+            </Principal>
+            <Dependent Role="aspnet_Users">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Us__RoleI__725BF7F6">
           <End Role="aspnet_Roles" Type="Self.aspnet_Roles" Multiplicity="1" />
           <End Role="aspnet_UsersInRoles" Type="Self.aspnet_UsersInRoles" Multiplicity="*" />
           <ReferentialConstraint>
@@ -479,7 +586,7 @@ warning 6002: The table/view 'CrimsonCoward.dbo.FullFoodMenu' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Us__UserI__44952D46">
+        <Association Name="FK__aspnet_Us__UserI__73501C2F">
           <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="1" />
           <End Role="aspnet_UsersInRoles" Type="Self.aspnet_UsersInRoles" Multiplicity="*" />
           <ReferentialConstraint>
@@ -948,16 +1055,6 @@ warning 6002: The table/view 'CrimsonCoward.dbo.FullFoodMenu' does not have a pr
           <Parameter Name="Culture" Type="nvarchar" Mode="In" />
           <Parameter Name="Value" Type="nvarchar" Mode="In" />
         </Function>
-        <Function Name="fn_ParseCSVString" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="IDS" Type="nvarchar(max)" Mode="In" />
-          <ReturnType>
-            <CollectionType>
-              <RowType>
-                <Property Name="ID" Type="nvarchar(max)" />
-              </RowType>
-            </CollectionType>
-          </ReturnType>
-        </Function>
         <Function Name="getAllTokens" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="getAppNotifications" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="getBlogs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -1219,66 +1316,151 @@ warning 6002: The table/view 'CrimsonCoward.dbo.FullFoodMenu' does not have a pr
           <EntitySet Name="Data" EntityType="Self.Data" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FoodCategory" EntityType="Self.FoodCategory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FoodMenu" EntityType="Self.FoodMenu" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="HomeTips" EntityType="Self.HomeTips" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Images" EntityType="Self.Images" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Partnership" EntityType="Self.Partnership" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="PropertyImage" EntityType="Self.PropertyImage" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RealEstateProperty" EntityType="Self.RealEstateProperty" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Reviews" EntityType="Self.Reviews" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Slider" EntityType="Self.Slider" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Subscribers" EntityType="Self.Subscribers" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="FullFoodMenu" EntityType="Self.FullFoodMenu" store:Type="Views" store:Schema="dbo">
+          <EntitySet Name="Subscriber" EntityType="Self.Subscriber" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vw_aspnet_Applications" EntityType="Self.vw_aspnet_Applications" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [FullFoodMenu].[Description] AS [Description], 
-    [FullFoodMenu].[Name] AS [Name], 
-    [FullFoodMenu].[Price] AS [Price], 
-    [FullFoodMenu].[CategoryID] AS [CategoryID], 
-    [FullFoodMenu].[CatName] AS [CatName], 
-    [FullFoodMenu].[CatDesc] AS [CatDesc]
-    FROM [dbo].[FullFoodMenu] AS [FullFoodMenu]</DefiningQuery>
+    [vw_aspnet_Applications].[ApplicationName] AS [ApplicationName], 
+    [vw_aspnet_Applications].[LoweredApplicationName] AS [LoweredApplicationName], 
+    [vw_aspnet_Applications].[ApplicationId] AS [ApplicationId], 
+    [vw_aspnet_Applications].[Description] AS [Description]
+    FROM [dbo].[vw_aspnet_Applications] AS [vw_aspnet_Applications]</DefiningQuery>
           </EntitySet>
-          <AssociationSet Name="FK__aspnet_Me__Appli__22401542" Association="Self.FK__aspnet_Me__Appli__22401542">
+          <EntitySet Name="vw_aspnet_MembershipUsers" EntityType="Self.vw_aspnet_MembershipUsers" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_aspnet_MembershipUsers].[UserId] AS [UserId], 
+    [vw_aspnet_MembershipUsers].[PasswordFormat] AS [PasswordFormat], 
+    [vw_aspnet_MembershipUsers].[MobilePIN] AS [MobilePIN], 
+    [vw_aspnet_MembershipUsers].[Email] AS [Email], 
+    [vw_aspnet_MembershipUsers].[LoweredEmail] AS [LoweredEmail], 
+    [vw_aspnet_MembershipUsers].[PasswordQuestion] AS [PasswordQuestion], 
+    [vw_aspnet_MembershipUsers].[PasswordAnswer] AS [PasswordAnswer], 
+    [vw_aspnet_MembershipUsers].[IsApproved] AS [IsApproved], 
+    [vw_aspnet_MembershipUsers].[IsLockedOut] AS [IsLockedOut], 
+    [vw_aspnet_MembershipUsers].[CreateDate] AS [CreateDate], 
+    [vw_aspnet_MembershipUsers].[LastLoginDate] AS [LastLoginDate], 
+    [vw_aspnet_MembershipUsers].[LastPasswordChangedDate] AS [LastPasswordChangedDate], 
+    [vw_aspnet_MembershipUsers].[LastLockoutDate] AS [LastLockoutDate], 
+    [vw_aspnet_MembershipUsers].[FailedPasswordAttemptCount] AS [FailedPasswordAttemptCount], 
+    [vw_aspnet_MembershipUsers].[FailedPasswordAttemptWindowStart] AS [FailedPasswordAttemptWindowStart], 
+    [vw_aspnet_MembershipUsers].[FailedPasswordAnswerAttemptCount] AS [FailedPasswordAnswerAttemptCount], 
+    [vw_aspnet_MembershipUsers].[FailedPasswordAnswerAttemptWindowStart] AS [FailedPasswordAnswerAttemptWindowStart], 
+    [vw_aspnet_MembershipUsers].[Comment] AS [Comment], 
+    [vw_aspnet_MembershipUsers].[ApplicationId] AS [ApplicationId], 
+    [vw_aspnet_MembershipUsers].[UserName] AS [UserName], 
+    [vw_aspnet_MembershipUsers].[MobileAlias] AS [MobileAlias], 
+    [vw_aspnet_MembershipUsers].[IsAnonymous] AS [IsAnonymous], 
+    [vw_aspnet_MembershipUsers].[LastActivityDate] AS [LastActivityDate]
+    FROM [dbo].[vw_aspnet_MembershipUsers] AS [vw_aspnet_MembershipUsers]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_aspnet_Profiles" EntityType="Self.vw_aspnet_Profiles" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_aspnet_Profiles].[UserId] AS [UserId], 
+    [vw_aspnet_Profiles].[LastUpdatedDate] AS [LastUpdatedDate], 
+    [vw_aspnet_Profiles].[DataSize] AS [DataSize]
+    FROM [dbo].[vw_aspnet_Profiles] AS [vw_aspnet_Profiles]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_aspnet_Roles" EntityType="Self.vw_aspnet_Roles" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_aspnet_Roles].[ApplicationId] AS [ApplicationId], 
+    [vw_aspnet_Roles].[RoleId] AS [RoleId], 
+    [vw_aspnet_Roles].[RoleName] AS [RoleName], 
+    [vw_aspnet_Roles].[LoweredRoleName] AS [LoweredRoleName], 
+    [vw_aspnet_Roles].[Description] AS [Description]
+    FROM [dbo].[vw_aspnet_Roles] AS [vw_aspnet_Roles]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_aspnet_Users" EntityType="Self.vw_aspnet_Users" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_aspnet_Users].[ApplicationId] AS [ApplicationId], 
+    [vw_aspnet_Users].[UserId] AS [UserId], 
+    [vw_aspnet_Users].[UserName] AS [UserName], 
+    [vw_aspnet_Users].[LoweredUserName] AS [LoweredUserName], 
+    [vw_aspnet_Users].[MobileAlias] AS [MobileAlias], 
+    [vw_aspnet_Users].[IsAnonymous] AS [IsAnonymous], 
+    [vw_aspnet_Users].[LastActivityDate] AS [LastActivityDate]
+    FROM [dbo].[vw_aspnet_Users] AS [vw_aspnet_Users]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_aspnet_UsersInRoles" EntityType="Self.vw_aspnet_UsersInRoles" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_aspnet_UsersInRoles].[UserId] AS [UserId], 
+    [vw_aspnet_UsersInRoles].[RoleId] AS [RoleId]
+    FROM [dbo].[vw_aspnet_UsersInRoles] AS [vw_aspnet_UsersInRoles]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_aspnet_WebPartState_Paths" EntityType="Self.vw_aspnet_WebPartState_Paths" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_aspnet_WebPartState_Paths].[ApplicationId] AS [ApplicationId], 
+    [vw_aspnet_WebPartState_Paths].[PathId] AS [PathId], 
+    [vw_aspnet_WebPartState_Paths].[Path] AS [Path], 
+    [vw_aspnet_WebPartState_Paths].[LoweredPath] AS [LoweredPath]
+    FROM [dbo].[vw_aspnet_WebPartState_Paths] AS [vw_aspnet_WebPartState_Paths]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_aspnet_WebPartState_Shared" EntityType="Self.vw_aspnet_WebPartState_Shared" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_aspnet_WebPartState_Shared].[PathId] AS [PathId], 
+    [vw_aspnet_WebPartState_Shared].[DataSize] AS [DataSize], 
+    [vw_aspnet_WebPartState_Shared].[LastUpdatedDate] AS [LastUpdatedDate]
+    FROM [dbo].[vw_aspnet_WebPartState_Shared] AS [vw_aspnet_WebPartState_Shared]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_aspnet_WebPartState_User" EntityType="Self.vw_aspnet_WebPartState_User" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_aspnet_WebPartState_User].[PathId] AS [PathId], 
+    [vw_aspnet_WebPartState_User].[UserId] AS [UserId], 
+    [vw_aspnet_WebPartState_User].[DataSize] AS [DataSize], 
+    [vw_aspnet_WebPartState_User].[LastUpdatedDate] AS [LastUpdatedDate]
+    FROM [dbo].[vw_aspnet_WebPartState_User] AS [vw_aspnet_WebPartState_User]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__aspnet_Me__Appli__69C6B1F5" Association="Self.FK__aspnet_Me__Appli__69C6B1F5">
             <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
             <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Me__UserI__2334397B" Association="Self.FK__aspnet_Me__UserI__2334397B">
+          <AssociationSet Name="FK__aspnet_Me__UserI__6ABAD62E" Association="Self.FK__aspnet_Me__UserI__6ABAD62E">
             <End Role="aspnet_Users" EntitySet="aspnet_Users" />
             <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Pa__Appli__53D770D6" Association="Self.FK__aspnet_Pa__Appli__53D770D6">
+          <AssociationSet Name="FK__aspnet_Pa__Appli__6BAEFA67" Association="Self.FK__aspnet_Pa__Appli__6BAEFA67">
             <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
             <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Pe__PathI__59904A2C" Association="Self.FK__aspnet_Pe__PathI__59904A2C">
+          <AssociationSet Name="FK__aspnet_Pe__PathI__6CA31EA0" Association="Self.FK__aspnet_Pe__PathI__6CA31EA0">
             <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
             <End Role="aspnet_PersonalizationAllUsers" EntitySet="aspnet_PersonalizationAllUsers" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Pe__PathI__5D60DB10" Association="Self.FK__aspnet_Pe__PathI__5D60DB10">
+          <AssociationSet Name="FK__aspnet_Pe__PathI__6D9742D9" Association="Self.FK__aspnet_Pe__PathI__6D9742D9">
             <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
             <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Pe__UserI__5E54FF49" Association="Self.FK__aspnet_Pe__UserI__5E54FF49">
+          <AssociationSet Name="FK__aspnet_Pe__UserI__6E8B6712" Association="Self.FK__aspnet_Pe__UserI__6E8B6712">
             <End Role="aspnet_Users" EntitySet="aspnet_Users" />
             <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Pr__UserI__373B3228" Association="Self.FK__aspnet_Pr__UserI__373B3228">
+          <AssociationSet Name="FK__aspnet_Pr__UserI__6F7F8B4B" Association="Self.FK__aspnet_Pr__UserI__6F7F8B4B">
             <End Role="aspnet_Users" EntitySet="aspnet_Users" />
             <End Role="aspnet_Profile" EntitySet="aspnet_Profile" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Ro__Appli__40C49C62" Association="Self.FK__aspnet_Ro__Appli__40C49C62">
+          <AssociationSet Name="FK__aspnet_Ro__Appli__7073AF84" Association="Self.FK__aspnet_Ro__Appli__7073AF84">
             <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
             <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Us__Appli__1209AD79" Association="Self.FK__aspnet_Us__Appli__1209AD79">
+          <AssociationSet Name="FK__aspnet_Us__Appli__3493CFA7" Association="Self.FK__aspnet_Us__Appli__3493CFA7">
             <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
             <End Role="aspnet_Users" EntitySet="aspnet_Users" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Us__RoleI__4589517F" Association="Self.FK__aspnet_Us__RoleI__4589517F">
+          <AssociationSet Name="FK__aspnet_Us__Appli__5BE2A6F2" Association="Self.FK__aspnet_Us__Appli__5BE2A6F2">
+            <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Us__Appli__7167D3BD" Association="Self.FK__aspnet_Us__Appli__7167D3BD">
+            <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Us__RoleI__725BF7F6" Association="Self.FK__aspnet_Us__RoleI__725BF7F6">
             <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
             <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Us__UserI__44952D46" Association="Self.FK__aspnet_Us__UserI__44952D46">
+          <AssociationSet Name="FK__aspnet_Us__UserI__73501C2F" Association="Self.FK__aspnet_Us__UserI__73501C2F">
             <End Role="aspnet_Users" EntitySet="aspnet_Users" />
             <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
           </AssociationSet>
@@ -1478,57 +1660,6 @@ warning 6002: The table/view 'CrimsonCoward.dbo.FullFoodMenu' does not have a pr
           <Property Name="title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="HomeTip">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Guid" Nullable="false" />
-          <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="text1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="text2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="dateCreated" Type="DateTime" Precision="3" />
-        </EntityType>
-        <EntityType Name="News">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Guid" Nullable="false" />
-          <Property Name="link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="date" Type="DateTime" Precision="3" />
-          <Property Name="Subtitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="isInternational" Type="Boolean" />
-        </EntityType>
-        <EntityType Name="Partnership">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Guid" Nullable="false" />
-          <Property Name="title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="logo" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="dateAdded" Type="DateTime" Precision="3" />
-        </EntityType>
-        <EntityType Name="PropertyImage">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Guid" Nullable="false" />
-          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="Extension" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ShowAsFirstImage" Type="Boolean" />
-          <Property Name="PRL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="PropertyType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="PropertyFor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Qadaa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="District" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Size" Type="Int32" />
-        </EntityType>
         <EntityType Name="RealEstateProperty">
           <Key>
             <PropertyRef Name="PRL" />
@@ -1578,13 +1709,6 @@ warning 6002: The table/view 'CrimsonCoward.dbo.FullFoodMenu' does not have a pr
           <Property Name="Features" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="MapLong" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="MapLat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="Subscriber">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         <Association Name="FK__aspnet_Me__Appli__22401542">
           <End Role="aspnet_Applications" Type="Self.aspnet_Applications" Multiplicity="1" />
@@ -1713,12 +1837,7 @@ warning 6002: The table/view 'CrimsonCoward.dbo.FullFoodMenu' does not have a pr
           <EntitySet Name="BlogCats" EntityType="Self.BlogCat" />
           <EntitySet Name="Careers" EntityType="Self.Career" />
           <EntitySet Name="Data" EntityType="Self.Datum" />
-          <EntitySet Name="HomeTips" EntityType="Self.HomeTip" />
-          <EntitySet Name="News" EntityType="Self.News" />
-          <EntitySet Name="Partnerships" EntityType="Self.Partnership" />
-          <EntitySet Name="PropertyImages" EntityType="Self.PropertyImage" />
           <EntitySet Name="RealEstateProperties" EntityType="Self.RealEstateProperty" />
-          <EntitySet Name="Subscribers" EntityType="Self.Subscriber" />
           <AssociationSet Name="FK__aspnet_Me__Appli__22401542" Association="Self.FK__aspnet_Me__Appli__22401542">
             <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
             <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
@@ -2451,7 +2570,16 @@ warning 6002: The table/view 'CrimsonCoward.dbo.FullFoodMenu' does not have a pr
             <End Role="FoodCategory" EntitySet="FoodCategories" />
             <End Role="FoodMenu" EntitySet="FoodMenus" />
           </AssociationSet>
-          <EntitySet Name="FullFoodMenus" EntityType="CrimsonCowardModel.FullFoodMenu" />
+          <EntitySet Name="vw_aspnet_Applications" EntityType="CrimsonCowardModel.vw_aspnet_Applications" />
+          <EntitySet Name="vw_aspnet_MembershipUsers" EntityType="CrimsonCowardModel.vw_aspnet_MembershipUsers" />
+          <EntitySet Name="vw_aspnet_Profiles" EntityType="CrimsonCowardModel.vw_aspnet_Profiles" />
+          <EntitySet Name="vw_aspnet_Roles" EntityType="CrimsonCowardModel.vw_aspnet_Roles" />
+          <EntitySet Name="vw_aspnet_Users" EntityType="CrimsonCowardModel.vw_aspnet_Users" />
+          <EntitySet Name="vw_aspnet_UsersInRoles" EntityType="CrimsonCowardModel.vw_aspnet_UsersInRoles" />
+          <EntitySet Name="vw_aspnet_WebPartState_Paths" EntityType="CrimsonCowardModel.vw_aspnet_WebPartState_Paths" />
+          <EntitySet Name="vw_aspnet_WebPartState_Shared" EntityType="CrimsonCowardModel.vw_aspnet_WebPartState_Shared" />
+          <EntitySet Name="vw_aspnet_WebPartState_User" EntityType="CrimsonCowardModel.vw_aspnet_WebPartState_User" />
+          <EntitySet Name="Subscribers" EntityType="CrimsonCowardModel.Subscriber" />
         </EntityContainer>
         <ComplexType Name="aspnet_Membership_GetPassword_Result">
           <Property Type="String" Name="Column1" Nullable="true" MaxLength="128" />
@@ -2623,18 +2751,143 @@ warning 6002: The table/view 'CrimsonCoward.dbo.FullFoodMenu' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="FullFoodMenu">
+        <EntityType Name="vw_aspnet_Applications">
           <Key>
-            <PropertyRef Name="Name" />
-            <PropertyRef Name="CategoryID" />
-            <PropertyRef Name="CatName" />
+            <PropertyRef Name="ApplicationName" />
+            <PropertyRef Name="LoweredApplicationName" />
+            <PropertyRef Name="ApplicationId" />
           </Key>
-          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="240" FixedLength="false" Unicode="true" />
-          <Property Name="Price" Type="Decimal" Precision="8" Scale="2" />
-          <Property Name="CategoryID" Type="Guid" Nullable="false" />
-          <Property Name="CatName" Type="String" Nullable="false" MaxLength="240" FixedLength="false" Unicode="true" />
-          <Property Name="CatDesc" Type="String" MaxLength="2500" FixedLength="false" Unicode="true" />
+          <Property Name="ApplicationName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="LoweredApplicationName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vw_aspnet_MembershipUsers">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="PasswordFormat" />
+            <PropertyRef Name="IsApproved" />
+            <PropertyRef Name="IsLockedOut" />
+            <PropertyRef Name="CreateDate" />
+            <PropertyRef Name="LastLoginDate" />
+            <PropertyRef Name="LastPasswordChangedDate" />
+            <PropertyRef Name="LastLockoutDate" />
+            <PropertyRef Name="FailedPasswordAttemptCount" />
+            <PropertyRef Name="FailedPasswordAttemptWindowStart" />
+            <PropertyRef Name="FailedPasswordAnswerAttemptCount" />
+            <PropertyRef Name="FailedPasswordAnswerAttemptWindowStart" />
+            <PropertyRef Name="ApplicationId" />
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="IsAnonymous" />
+            <PropertyRef Name="LastActivityDate" />
+          </Key>
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="PasswordFormat" Type="Int32" Nullable="false" />
+          <Property Name="MobilePIN" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="LoweredEmail" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="PasswordQuestion" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="PasswordAnswer" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="IsApproved" Type="Boolean" Nullable="false" />
+          <Property Name="IsLockedOut" Type="Boolean" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastLoginDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastPasswordChangedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastLockoutDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FailedPasswordAttemptCount" Type="Int32" Nullable="false" />
+          <Property Name="FailedPasswordAttemptWindowStart" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FailedPasswordAnswerAttemptCount" Type="Int32" Nullable="false" />
+          <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="MobileAlias" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="IsAnonymous" Type="Boolean" Nullable="false" />
+          <Property Name="LastActivityDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="vw_aspnet_Profiles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="LastUpdatedDate" />
+          </Key>
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DataSize" Type="Int32" />
+        </EntityType>
+        <EntityType Name="vw_aspnet_Roles">
+          <Key>
+            <PropertyRef Name="ApplicationId" />
+            <PropertyRef Name="RoleId" />
+            <PropertyRef Name="RoleName" />
+            <PropertyRef Name="LoweredRoleName" />
+          </Key>
+          <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+          <Property Name="RoleId" Type="Guid" Nullable="false" />
+          <Property Name="RoleName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="LoweredRoleName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vw_aspnet_Users">
+          <Key>
+            <PropertyRef Name="ApplicationId" />
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="LoweredUserName" />
+            <PropertyRef Name="IsAnonymous" />
+            <PropertyRef Name="LastActivityDate" />
+          </Key>
+          <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="LoweredUserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="MobileAlias" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="IsAnonymous" Type="Boolean" Nullable="false" />
+          <Property Name="LastActivityDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="vw_aspnet_UsersInRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="RoleId" Type="Guid" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vw_aspnet_WebPartState_Paths">
+          <Key>
+            <PropertyRef Name="ApplicationId" />
+            <PropertyRef Name="PathId" />
+            <PropertyRef Name="Path" />
+            <PropertyRef Name="LoweredPath" />
+          </Key>
+          <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+          <Property Name="PathId" Type="Guid" Nullable="false" />
+          <Property Name="Path" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="LoweredPath" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vw_aspnet_WebPartState_Shared">
+          <Key>
+            <PropertyRef Name="PathId" />
+            <PropertyRef Name="LastUpdatedDate" />
+          </Key>
+          <Property Name="PathId" Type="Guid" Nullable="false" />
+          <Property Name="DataSize" Type="Int32" />
+          <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="vw_aspnet_WebPartState_User">
+          <Key>
+            <PropertyRef Name="LastUpdatedDate" />
+          </Key>
+          <Property Name="PathId" Type="Guid" />
+          <Property Name="UserId" Type="Guid" />
+          <Property Name="DataSize" Type="Int32" />
+          <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Subscriber">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -2815,61 +3068,6 @@ warning 6002: The table/view 'CrimsonCoward.dbo.FullFoodMenu' does not have a pr
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="HomeTips">
-            <EntityTypeMapping TypeName="CrimsonCowardModel.HomeTip">
-              <MappingFragment StoreEntitySet="HomeTips">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="image" ColumnName="image" />
-                <ScalarProperty Name="link" ColumnName="link" />
-                <ScalarProperty Name="title" ColumnName="title" />
-                <ScalarProperty Name="text1" ColumnName="text1" />
-                <ScalarProperty Name="text2" ColumnName="text2" />
-                <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="News">
-            <EntityTypeMapping TypeName="CrimsonCowardModel.News">
-              <MappingFragment StoreEntitySet="News">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="link" ColumnName="link" />
-                <ScalarProperty Name="title" ColumnName="title" />
-                <ScalarProperty Name="description" ColumnName="description" />
-                <ScalarProperty Name="date" ColumnName="date" />
-                <ScalarProperty Name="Subtitle" ColumnName="Subtitle" />
-                <ScalarProperty Name="isInternational" ColumnName="isInternational" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Partnerships">
-            <EntityTypeMapping TypeName="CrimsonCowardModel.Partnership">
-              <MappingFragment StoreEntitySet="Partnership">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="title" ColumnName="title" />
-                <ScalarProperty Name="text" ColumnName="text" />
-                <ScalarProperty Name="image" ColumnName="image" />
-                <ScalarProperty Name="logo" ColumnName="logo" />
-                <ScalarProperty Name="dateAdded" ColumnName="dateAdded" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="PropertyImages">
-            <EntityTypeMapping TypeName="CrimsonCowardModel.PropertyImage">
-              <MappingFragment StoreEntitySet="PropertyImage">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="Image" ColumnName="Image" />
-                <ScalarProperty Name="Extension" ColumnName="Extension" />
-                <ScalarProperty Name="ShowAsFirstImage" ColumnName="ShowAsFirstImage" />
-                <ScalarProperty Name="PRL" ColumnName="PRL" />
-                <ScalarProperty Name="PropertyType" ColumnName="PropertyType" />
-                <ScalarProperty Name="PropertyFor" ColumnName="PropertyFor" />
-                <ScalarProperty Name="Qadaa" ColumnName="Qadaa" />
-                <ScalarProperty Name="District" ColumnName="District" />
-                <ScalarProperty Name="Size" ColumnName="Size" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="RealEstateProperties">
             <EntityTypeMapping TypeName="CrimsonCowardModel.RealEstateProperty">
               <MappingFragment StoreEntitySet="RealEstateProperty">
@@ -2921,14 +3119,6 @@ warning 6002: The table/view 'CrimsonCoward.dbo.FullFoodMenu' does not have a pr
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Subscribers">
-            <EntityTypeMapping TypeName="CrimsonCowardModel.Subscriber">
-              <MappingFragment StoreEntitySet="Subscribers">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="email" ColumnName="email" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <AssociationSetMapping Name="aspnet_UsersInRoles" TypeName="CrimsonCowardModel.aspnet_UsersInRoles" StoreEntitySet="aspnet_UsersInRoles">
             <EndProperty Name="aspnet_Roles">
               <ScalarProperty Name="RoleId" ColumnName="RoleId" />
@@ -2937,13 +3127,6 @@ warning 6002: The table/view 'CrimsonCoward.dbo.FullFoodMenu' does not have a pr
               <ScalarProperty Name="UserId" ColumnName="UserId" />
             </EndProperty>
           </AssociationSetMapping>
-          <FunctionImportMapping FunctionName="CrimsonCowardModel.Store.fn_ParseCSVString" FunctionImportName="fn_ParseCSVString">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="CrimsonCowardModel.fn_ParseCSVString_Result">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="addAppNotification" FunctionName="CrimsonCowardModel.Store.addAppNotification" />
           <FunctionImportMapping FunctionImportName="addNewsLetter" FunctionName="CrimsonCowardModel.Store.addNewsLetter" />
           <FunctionImportMapping FunctionImportName="addToken" FunctionName="CrimsonCowardModel.Store.addToken" />
@@ -3249,15 +3432,120 @@ warning 6002: The table/view 'CrimsonCoward.dbo.FullFoodMenu' does not have a pr
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="FullFoodMenus">
-            <EntityTypeMapping TypeName="CrimsonCowardModel.FullFoodMenu">
-              <MappingFragment StoreEntitySet="FullFoodMenu">
-                <ScalarProperty Name="CatDesc" ColumnName="CatDesc" />
-                <ScalarProperty Name="CatName" ColumnName="CatName" />
-                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
+          <EntitySetMapping Name="vw_aspnet_Applications">
+            <EntityTypeMapping TypeName="CrimsonCowardModel.vw_aspnet_Applications">
+              <MappingFragment StoreEntitySet="vw_aspnet_Applications">
                 <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+                <ScalarProperty Name="LoweredApplicationName" ColumnName="LoweredApplicationName" />
+                <ScalarProperty Name="ApplicationName" ColumnName="ApplicationName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_aspnet_MembershipUsers">
+            <EntityTypeMapping TypeName="CrimsonCowardModel.vw_aspnet_MembershipUsers">
+              <MappingFragment StoreEntitySet="vw_aspnet_MembershipUsers">
+                <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+                <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
+                <ScalarProperty Name="MobileAlias" ColumnName="MobileAlias" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="FailedPasswordAnswerAttemptWindowStart" ColumnName="FailedPasswordAnswerAttemptWindowStart" />
+                <ScalarProperty Name="FailedPasswordAnswerAttemptCount" ColumnName="FailedPasswordAnswerAttemptCount" />
+                <ScalarProperty Name="FailedPasswordAttemptWindowStart" ColumnName="FailedPasswordAttemptWindowStart" />
+                <ScalarProperty Name="FailedPasswordAttemptCount" ColumnName="FailedPasswordAttemptCount" />
+                <ScalarProperty Name="LastLockoutDate" ColumnName="LastLockoutDate" />
+                <ScalarProperty Name="LastPasswordChangedDate" ColumnName="LastPasswordChangedDate" />
+                <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="IsLockedOut" ColumnName="IsLockedOut" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+                <ScalarProperty Name="PasswordAnswer" ColumnName="PasswordAnswer" />
+                <ScalarProperty Name="PasswordQuestion" ColumnName="PasswordQuestion" />
+                <ScalarProperty Name="LoweredEmail" ColumnName="LoweredEmail" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="MobilePIN" ColumnName="MobilePIN" />
+                <ScalarProperty Name="PasswordFormat" ColumnName="PasswordFormat" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_aspnet_Profiles">
+            <EntityTypeMapping TypeName="CrimsonCowardModel.vw_aspnet_Profiles">
+              <MappingFragment StoreEntitySet="vw_aspnet_Profiles">
+                <ScalarProperty Name="DataSize" ColumnName="DataSize" />
+                <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_aspnet_Roles">
+            <EntityTypeMapping TypeName="CrimsonCowardModel.vw_aspnet_Roles">
+              <MappingFragment StoreEntitySet="vw_aspnet_Roles">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="LoweredRoleName" ColumnName="LoweredRoleName" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_aspnet_Users">
+            <EntityTypeMapping TypeName="CrimsonCowardModel.vw_aspnet_Users">
+              <MappingFragment StoreEntitySet="vw_aspnet_Users">
+                <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+                <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
+                <ScalarProperty Name="MobileAlias" ColumnName="MobileAlias" />
+                <ScalarProperty Name="LoweredUserName" ColumnName="LoweredUserName" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_aspnet_UsersInRoles">
+            <EntityTypeMapping TypeName="CrimsonCowardModel.vw_aspnet_UsersInRoles">
+              <MappingFragment StoreEntitySet="vw_aspnet_UsersInRoles">
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_aspnet_WebPartState_Paths">
+            <EntityTypeMapping TypeName="CrimsonCowardModel.vw_aspnet_WebPartState_Paths">
+              <MappingFragment StoreEntitySet="vw_aspnet_WebPartState_Paths">
+                <ScalarProperty Name="LoweredPath" ColumnName="LoweredPath" />
+                <ScalarProperty Name="Path" ColumnName="Path" />
+                <ScalarProperty Name="PathId" ColumnName="PathId" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_aspnet_WebPartState_Shared">
+            <EntityTypeMapping TypeName="CrimsonCowardModel.vw_aspnet_WebPartState_Shared">
+              <MappingFragment StoreEntitySet="vw_aspnet_WebPartState_Shared">
+                <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+                <ScalarProperty Name="DataSize" ColumnName="DataSize" />
+                <ScalarProperty Name="PathId" ColumnName="PathId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_aspnet_WebPartState_User">
+            <EntityTypeMapping TypeName="CrimsonCowardModel.vw_aspnet_WebPartState_User">
+              <MappingFragment StoreEntitySet="vw_aspnet_WebPartState_User">
+                <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+                <ScalarProperty Name="DataSize" ColumnName="DataSize" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="PathId" ColumnName="PathId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Subscribers">
+            <EntityTypeMapping TypeName="CrimsonCowardModel.Subscriber">
+              <MappingFragment StoreEntitySet="Subscriber">
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

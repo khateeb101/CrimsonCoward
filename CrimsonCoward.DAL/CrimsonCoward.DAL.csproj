@@ -115,9 +115,6 @@
     <Compile Include="Blog_GetByID_Result.cs">
       <DependentUpon>CrimsonCowardData.tt</DependentUpon>
     </Compile>
-    <Compile Include="Career.cs">
-      <DependentUpon>CrimsonCowardData.tt</DependentUpon>
-    </Compile>
     <Compile Include="Datum.cs">
       <DependentUpon>CrimsonCowardData.tt</DependentUpon>
     </Compile>
@@ -130,16 +127,10 @@
     <Compile Include="FoodMenu.cs">
       <DependentUpon>CrimsonCowardData.tt</DependentUpon>
     </Compile>
-    <Compile Include="FullFoodMenu.cs">
-      <DependentUpon>CrimsonCowardData.tt</DependentUpon>
-    </Compile>
     <Compile Include="GetBlogsByCat_Result.cs">
       <DependentUpon>CrimsonCowardData.tt</DependentUpon>
     </Compile>
     <Compile Include="getBlogs_Result.cs">
-      <DependentUpon>CrimsonCowardData.tt</DependentUpon>
-    </Compile>
-    <Compile Include="HomeTip.cs">
       <DependentUpon>CrimsonCowardData.tt</DependentUpon>
     </Compile>
     <Compile Include="CrimsonCowardData.Context.cs">
@@ -160,9 +151,6 @@
     <Compile Include="Image.cs">
       <DependentUpon>CrimsonCowardData.tt</DependentUpon>
     </Compile>
-    <Compile Include="PropertyImage.cs">
-      <DependentUpon>CrimsonCowardData.tt</DependentUpon>
-    </Compile>
     <Compile Include="Reviews.cs">
       <DependentUpon>CrimsonCowardData.tt</DependentUpon>
     </Compile>
@@ -175,14 +163,32 @@
     <Compile Include="BlogCat.cs">
       <DependentUpon>CrimsonCowardData.tt</DependentUpon>
     </Compile>
-    <Compile Include="Partnership.cs">
-      <DependentUpon>CrimsonCowardData.tt</DependentUpon>
-    </Compile>
-    <Compile Include="News.cs">
-      <DependentUpon>CrimsonCowardData.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RealEstateProperty.cs">
+    <Compile Include="vw_aspnet_Applications.cs">
+      <DependentUpon>CrimsonCowardData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_aspnet_MembershipUsers.cs">
+      <DependentUpon>CrimsonCowardData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_aspnet_Profiles.cs">
+      <DependentUpon>CrimsonCowardData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_aspnet_Roles.cs">
+      <DependentUpon>CrimsonCowardData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_aspnet_Users.cs">
+      <DependentUpon>CrimsonCowardData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_aspnet_UsersInRoles.cs">
+      <DependentUpon>CrimsonCowardData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_aspnet_WebPartState_Paths.cs">
+      <DependentUpon>CrimsonCowardData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_aspnet_WebPartState_Shared.cs">
+      <DependentUpon>CrimsonCowardData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_aspnet_WebPartState_User.cs">
       <DependentUpon>CrimsonCowardData.tt</DependentUpon>
     </Compile>
   </ItemGroup>

@@ -19,12 +19,7 @@
         <EntityTypeShape EntityType="CrimsonCowardModel.BlogCat" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="CrimsonCowardModel.Career" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="CrimsonCowardModel.Datum" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CrimsonCowardModel.HomeTip" Width="1.5" PointX="7.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CrimsonCowardModel.News" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CrimsonCowardModel.Partnership" Width="1.5" PointX="9.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CrimsonCowardModel.PropertyImage" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="CrimsonCowardModel.RealEstateProperty" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CrimsonCowardModel.Subscriber" Width="1.5" PointX="12.75" PointY="10.75" IsExpanded="true" />
         <AssociationConnector Association="CrimsonCowardModel.FK__aspnet_Me__Appli__22401542" ManuallyRouted="false" />
         <AssociationConnector Association="CrimsonCowardModel.FK__aspnet_Pa__Appli__53D770D6" ManuallyRouted="false" />
         <AssociationConnector Association="CrimsonCowardModel.FK__aspnet_Ro__Appli__40C49C62" ManuallyRouted="false" />
@@ -43,7 +38,16 @@
         <EntityTypeShape EntityType="CrimsonCowardModel.FoodMenu" Width="1.5" PointX="17.625" PointY="0.875" />
         <AssociationConnector Association="CrimsonCowardModel.FK_FoodCategory_FoodCategory" />
         <AssociationConnector Association="CrimsonCowardModel.FK_FoodMenu_FoodCategory" />
-        <EntityTypeShape EntityType="CrimsonCowardModel.FullFoodMenu" Width="1.5" PointX="15.375" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrimsonCowardModel.vw_aspnet_Applications" Width="1.5" PointX="15.75" PointY="10.75" />
+        <EntityTypeShape EntityType="CrimsonCowardModel.vw_aspnet_MembershipUsers" Width="1.5" PointX="12.75" PointY="15.75" />
+        <EntityTypeShape EntityType="CrimsonCowardModel.vw_aspnet_Profiles" Width="1.5" PointX="15.75" PointY="13.75" />
+        <EntityTypeShape EntityType="CrimsonCowardModel.vw_aspnet_Roles" Width="1.5" PointX="9.75" PointY="16.75" />
+        <EntityTypeShape EntityType="CrimsonCowardModel.vw_aspnet_Users" Width="1.5" PointX="14.75" PointY="16.75" />
+        <EntityTypeShape EntityType="CrimsonCowardModel.vw_aspnet_UsersInRoles" Width="1.5" PointX="16.75" PointY="16.75" />
+        <EntityTypeShape EntityType="CrimsonCowardModel.vw_aspnet_WebPartState_Paths" Width="1.5" PointX="0.75" PointY="17.75" />
+        <EntityTypeShape EntityType="CrimsonCowardModel.vw_aspnet_WebPartState_Shared" Width="1.5" PointX="2.75" PointY="17.75" />
+        <EntityTypeShape EntityType="CrimsonCowardModel.vw_aspnet_WebPartState_User" Width="1.5" PointX="17.75" PointY="4.75" />
+        <EntityTypeShape EntityType="CrimsonCowardModel.Subscriber" Width="1.5" PointX="15.375" PointY="7.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

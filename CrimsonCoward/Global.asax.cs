@@ -30,7 +30,7 @@ namespace CrimsonCoward
                 Roles.AddUserToRole(mu.UserName, "Admin");
             }
 
-            RouteTable.Routes.MapPageRoute("home", "", "~/CCHome.aspx");
+            RouteTable.Routes.MapPageRoute("home", "", "~/Default.aspx");
             RouteTable.Routes.MapPageRoute("about", "AboutUs", "~/aboutUs.aspx");
             RouteTable.Routes.MapPageRoute("news", "News", "~/news.aspx");
             RouteTable.Routes.MapPageRoute("Blog", "Blog", "~/Blog.aspx");
@@ -39,7 +39,6 @@ namespace CrimsonCoward
             RouteTable.Routes.MapPageRoute("Intrested", "ContactUs/{Prl}", "~/contactUs.aspx");
             RouteTable.Routes.MapPageRoute("careers", "Careers", "~/careers.aspx");
             RouteTable.Routes.MapPageRoute("login", "login", "~/login.aspx");
-            //RouteTable.Routes.MapPageRoute("admin", "Admin", "~/Admin/NewsAdmin.aspx");
             
         }
 

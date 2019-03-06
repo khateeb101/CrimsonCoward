@@ -14,7 +14,6 @@ namespace CrimsonCoward
 {
     public partial class ContactUs : System.Web.UI.Page
     {
-        public RealEstateProperty prop;
        
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -29,14 +28,6 @@ namespace CrimsonCoward
                     PropertyDetails.Visible = true;
                     CrimsonCowardEntities db = new CrimsonCowardEntities();
                     string _prl = Page.RouteData.Values["Prl"].ToString();
-                    prop = db.RealEstateProperties.Where(x => x.PRL == _prl).FirstOrDefault();
- 
-                    imgSrc.ImageUrl = ResolveUrl("~/") + "Thumbnail.aspx?Id=" + prop.PRL + "&secImg=big";
-                    Bedrooms.Visible=prop.TotalBedrooms>0?true:false;
-                    Bathrooms.Visible=prop.Bathrooms>0?true:false;
-                    Parking.Visible=prop.Parkings>0?true:false;
-                    Size.Visible = prop.Size> 0 ? true : false;
-
                 }
                 else
                 {

@@ -90,57 +90,6 @@ namespace CrimsonCoward
                     b = File.ReadAllBytes(MapPath("~/assets/logo.png"));
                       }
                 }
-                else if (Request.Params["imgID"] != null)
-                {
-                var _id = Request.Params["imgID"].ToGuid();
-                   PropertyImage _img = db.PropertyImages.Where(x=>x.Id == _id).FirstOrDefault();
-                   if (_img != null)
-                   {
-                       if (_img != null && _img.Image.Length == 0)
-                           b = File.ReadAllBytes(MapPath("~/assets/logo.png"));
-                       else
-                           b = _img.Image;
-                   }
-                   else
-                b = File.ReadAllBytes(MapPath("~/assets/logo.png"));
-
-
-                }
-                else if (Request.Params["newsid"] != null)
-                {
-                var _id = Request.Params["newsid"].ToGuid();
-               
-                b = File.ReadAllBytes(MapPath("~/assets/logo.png"));
-                }
-                else if (Request.Params["BlogCatid"] != null)
-                {
-                var _id = Request.Params["BlogCatid"].ToGuid();
-                       DAL.BlogCat img =db.BlogCats.Where(x=>x.Id == _id).FirstOrDefault();
-                       if (img != null)
-                       {
-                           if (img.image == null || img.image.Length == 0)
-                               b = File.ReadAllBytes(MapPath("~/assets/logo.png"));
-                           else
-                               b = img.image;
-                       }
-                       else
-                b = File.ReadAllBytes(MapPath("~/assets/logo.png"));
-                }
-                else if (Request.Params["Blogid"] != null)
-                {
-                var _id = Request.Params["Blogid"].ToGuid();
-
-                      DAL.Blog img = db.Blogs.Where(x=>x.Id == _id).FirstOrDefault();
-                      if (img != null)
-                      {
-                          if (img.image == null || img.image.Length == 0)
-                              b = File.ReadAllBytes(MapPath("~/assets/logo.png"));
-                          else
-                              b = img.image;
-                      }
-                      else
-                b = File.ReadAllBytes(MapPath("~/assets/logo.png"));
-                }
                 else if (Request.Params["SliderId"] != null)
                 {
                 var _id = int.Parse(Request.Params["SliderId"]);
@@ -162,32 +111,9 @@ namespace CrimsonCoward
                          else
                     b = File.ReadAllBytes(MapPath("~/assets/logo.png"));
                 }
-                else if (Request.Params["HomeTipid"] != null)
+                else
                 {
-                var _id = Guid.Parse(Request.Params["HomeTipid"]);
-                DAL.HomeTip img = db.HomeTips.Where(x => x.Id == _id).First();
-                      if (img != null)
-                      {
-                          if (img.image == null || img.image.Length == 0)
-                              b = File.ReadAllBytes(MapPath("~/assets/logo.png"));
-                          else
-                              b = img.image;
-                      }
-                      else
-                    b = File.ReadAllBytes(MapPath("~/assets/logo.png"));
-                }
-                else if (Request.Params["PropertyImageId"] != null)
-                {
-                var _id = Request.Params["PropertyImageId"].ToGuid();
-                PropertyImage propImg = db.PropertyImages.Where(x => x.Id == _id).FirstOrDefault();
-                        if (propImg != null)
-                            b = propImg.Image;
-                        else
-                            b = File.ReadAllBytes(MapPath("~/assets/logo.png"));
-                    }
-                    else
-                    {
-                    b = File.ReadAllBytes(MapPath("~/assets/logo.png"));
+                b = File.ReadAllBytes(MapPath("~/assets/logo.png"));
                 }
 
 

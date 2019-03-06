@@ -117,12 +117,6 @@
     <Content Include="Admin\SliderAdmin.aspx" />
     <Content Include="Admin\ReviewsAdminEdit.aspx" />
     <Content Include="Admin\SliderAdminEdit.aspx" />
-    <Content Include="Admin\PartnershipsAdminEdit.aspx" />
-    <Content Include="Admin\HomeTipsEdit.aspx" />
-    <Content Include="Admin\NewsAdminEdit.aspx" />
-    <Content Include="Admin\PartnershipsAdmin.aspx" />
-    <Content Include="Admin\HomeTipsAdmin.aspx" />
-    <Content Include="Admin\NewsAdmin.aspx" />
     <Content Include="Admin\PagesAdmin.aspx" />
     <Content Include="assets\AjaxControlToolkit.dll" />
     <Content Include="assets\Article1.jpg" />
@@ -161,7 +155,7 @@
     <Content Include="email\message.htm" />
     <Content Include="email\property.htm" />
     <Content Include="email\request.htm" />
-    <Content Include="CCHome.aspx" />
+    <Content Include="Default.aspx" />
     <Content Include="img\App-store.png" />
     <Content Include="img\Email.png" />
     <Content Include="img\google-play.png" />
@@ -174,11 +168,7 @@
     <Content Include="js\gmap3.js" />
     <Content Include="js\jquery.star.rating.js" />
     <Content Include="js\jquery.sumoselect.js" />
-    <Content Include="BlogDetails.aspx" />
     <Content Include="js\typeahead.js" />
-    <Content Include="NewsEvents.aspx" />
-    <Content Include="NewsDetails.aspx" />
-    <Content Include="Blog.aspx" />
     <Content Include="img\bathrooms.png" />
     <Content Include="img\bedrooms.png" />
     <Content Include="img\imgLoading.gif" />
@@ -192,7 +182,7 @@
     <Content Include="js\social-share-kit.js" />
     <Content Include="login.aspx" />
     <Content Include="SendSms.aspx" />
-    <Content Include="UcSearch.ascx" />
+    <Content Include="Thumbnail.aspx" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -217,8 +207,6 @@
     <Content Include="fonts\customicon\Icons.svg" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
-    <Content Include="home.aspx" />
-    <Content Include="ImageStreamer.aspx" />
     <Content Include="img\about.jpg" />
     <Content Include="img\AgentBadge.png" />
     <Content Include="img\avatar.png" />
@@ -311,7 +299,6 @@
     <Content Include="js\quicksand\jquery.quicksand.js" />
     <Content Include="js\quicksand\setting.js" />
     <Content Include="js\validate.js" />
-    <Content Include="Thumbnail.aspx" />
     <Content Include="UserControls\latest-properties.ascx" />
     <Content Include="UserControls\real-estate-news.ascx" />
     <Content Include="Web.config" />
@@ -387,48 +374,6 @@
     <Compile Include="Admin\SliderAdminEdit.aspx.designer.cs">
       <DependentUpon>SliderAdminEdit.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\PartnershipsAdminEdit.aspx.cs">
-      <DependentUpon>PartnershipsAdminEdit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\PartnershipsAdminEdit.aspx.designer.cs">
-      <DependentUpon>PartnershipsAdminEdit.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\HomeTipsEdit.aspx.cs">
-      <DependentUpon>HomeTipsEdit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\HomeTipsEdit.aspx.designer.cs">
-      <DependentUpon>HomeTipsEdit.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\NewsAdminEdit.aspx.cs">
-      <DependentUpon>NewsAdminEdit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\NewsAdminEdit.aspx.designer.cs">
-      <DependentUpon>NewsAdminEdit.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\PartnershipsAdmin.aspx.cs">
-      <DependentUpon>PartnershipsAdmin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\PartnershipsAdmin.aspx.designer.cs">
-      <DependentUpon>PartnershipsAdmin.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\HomeTipsAdmin.aspx.cs">
-      <DependentUpon>HomeTipsAdmin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\HomeTipsAdmin.aspx.designer.cs">
-      <DependentUpon>HomeTipsAdmin.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\NewsAdmin.aspx.cs">
-      <DependentUpon>NewsAdmin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\NewsAdmin.aspx.designer.cs">
-      <DependentUpon>NewsAdmin.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Admin\PagesAdmin.aspx.cs">
       <DependentUpon>PagesAdmin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -459,19 +404,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper.cs" />
-    <Compile Include="CCHome.aspx.cs">
-      <DependentUpon>CCHome.aspx</DependentUpon>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CCHome.aspx.designer.cs">
-      <DependentUpon>CCHome.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="home.aspx.cs">
-      <DependentUpon>home.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="home.aspx.designer.cs">
-      <DependentUpon>home.aspx</DependentUpon>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\LogOut.aspx.cs">
       <DependentUpon>LogOut.aspx</DependentUpon>
@@ -479,41 +417,6 @@
     </Compile>
     <Compile Include="Admin\LogOut.aspx.designer.cs">
       <DependentUpon>LogOut.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="BlogDetails.aspx.cs">
-      <DependentUpon>BlogDetails.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="BlogDetails.aspx.designer.cs">
-      <DependentUpon>BlogDetails.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="NewsEvents.aspx.cs">
-      <DependentUpon>NewsEvents.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="NewsEvents.aspx.designer.cs">
-      <DependentUpon>NewsEvents.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="NewsDetails.aspx.cs">
-      <DependentUpon>NewsDetails.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="NewsDetails.aspx.designer.cs">
-      <DependentUpon>NewsDetails.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Blog.aspx.cs">
-      <DependentUpon>Blog.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Blog.aspx.designer.cs">
-      <DependentUpon>Blog.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ImageStreamer.aspx.cs">
-      <DependentUpon>ImageStreamer.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ImageStreamer.aspx.designer.cs">
-      <DependentUpon>ImageStreamer.aspx</DependentUpon>
     </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
@@ -536,13 +439,6 @@
     </Compile>
     <Compile Include="Thumbnail.aspx.designer.cs">
       <DependentUpon>Thumbnail.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="UcSearch.ascx.cs">
-      <DependentUpon>UcSearch.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UcSearch.ascx.designer.cs">
-      <DependentUpon>UcSearch.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\latest-properties.ascx.cs">
       <DependentUpon>latest-properties.ascx</DependentUpon>
@@ -593,6 +489,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\Profile1.pubxml" />
   </ItemGroup>
   <PropertyGroup>

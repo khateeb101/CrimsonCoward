@@ -10,7 +10,7 @@
 namespace CrimsonCoward {
     
     
-    public partial class CCHome {
+    public partial class Default {
         
         /// <summary>
         /// rptBanner control.
